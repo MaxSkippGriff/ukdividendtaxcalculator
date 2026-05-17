@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do contractors always pay dividend tax?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Not always. If your total dividend income falls within the £500 dividend allowance and your other income does not exceed the Personal Allowance, you may owe no dividend tax. Most contractors drawing meaningful dividends will exceed the £500 threshold and will owe some dividend tax."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is taking dividends more tax-efficient than salary for contractors?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For many limited company contractors, a combination of a low salary (up to the Primary Threshold or Personal Allowance) and dividends is more efficient than a high salary, because dividends are not subject to National Insurance. However, corporation tax is paid on profits first, so the benefit depends on your total income and the corporation tax rate (25% for profits above £250,000 for 2026/27)."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the dividend allowance for contractors in 2026/27?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The dividend allowance is £500 for 2026/27. This applies to all UK taxpayers, including contractors. Dividends within this amount are free from dividend tax. It was reduced from £1,000 in April 2024."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does corporation tax affect how much dividend tax I pay?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Corporation tax and personal dividend tax are separate. Your company pays corporation tax on its profits before dividends are declared. You then pay personal dividend tax on the dividends you receive. This calculator covers only the personal dividend tax side."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to file Self Assessment if I take dividends from my company?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. If you are a director of a limited company and receive dividend income, you are generally required to complete a Self Assessment tax return each year. HMRC cannot collect dividend tax through PAYE automatically."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax for Contractors 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Limited company contractors typically take a low salary and top up with dividends from company profits. This guide explains how UK dividend tax applies to that structure, with 2026/27 rates and a worked example.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How the salary-plus-dividends structure works</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        When you operate through a limited company, the company pays corporation tax on its profits. What remains can be retained in the company or paid out as dividends. As a contractor-director, you typically set your own salary — often at or near the Personal Allowance of £12,570 — and draw the rest of your income as dividends.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        This structure can be more efficient than a high salary because dividends do not attract National Insurance Contributions (NICs) for either the employee or employer. However, corporation tax (at 19% or 25% depending on profit levels) is paid before dividends are paid out, so the tax efficiency is not as simple as comparing rates alone.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
+        Once dividends land in your hands, personal dividend tax applies. Dividends are treated as the top slice of your income — your salary fills the Personal Allowance and rate bands first, and dividends sit on top.
+      </p>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Band</th>
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Income range</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Dividend rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Basic rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Up to £50,270</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">10.75%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Higher rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">£50,271 – £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">35.75%</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.5rem;">Additional rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Above £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin-top:0.6rem;margin-bottom:0;">
+        The first £500 of dividend income each year is covered by the dividend allowance and is not taxed.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> A contractor takes a salary of £12,570 and dividends of £45,000 in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £12,570 uses the full Personal Allowance — no income tax on salary.</li>
+        <li>Dividends of £45,000 sit on top. No Personal Allowance remains.</li>
+        <li>First £500 of dividends: covered by the dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Basic-rate band available for dividends: £50,270 − £12,570 = £37,700. After using £500 allowance, £37,200 remains in the basic band.</li>
+        <li>Next £37,200 at 10.75% = <strong>£3,999</strong>.</li>
+        <li>Remaining £7,300 (£45,000 − £500 − £37,200) falls in the higher-rate band: £7,300 × 35.75% = <strong>£2,610</strong>.</li>
+        <li><strong>Total dividend tax: approximately £6,609.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        This is personal dividend tax only. Corporation tax on company profits is separate and paid before dividends are drawn.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Common mistakes</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><strong>Forgetting corporation tax comes first.</strong> The tax-efficiency comparison should be made on post-corporation-tax profits, not gross revenue.</li>
+        <li><strong>Using the wrong dividend allowance figure.</strong> The allowance is £500 for 2026/27. It was reduced from £1,000 in April 2024 and from £2,000 in April 2023. Using £1,000 or £2,000 will underestimate your tax bill.</li>
+        <li><strong>Ignoring how salary affects the bands.</strong> Your salary determines how much basic-rate band is left for dividends. A higher salary leaves less room in the basic-rate band and pushes more dividends into the higher-rate band.</li>
+        <li><strong>Not registering for Self Assessment.</strong> As a director receiving dividends, you must complete a Self Assessment return annually. HMRC cannot collect dividend tax through PAYE.</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a full breakdown at 10.75%, 35.75% and 39.35%.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div style="background:var(--surface);border:1.5px solid var(--border-strong);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Also model the full company tax picture</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">This calculator covers personal dividend tax only. To model your limited company's corporation tax, salary, and total tax position together, use the Limited Company Tax Calculator — a dedicated tool for contractors and directors.</p>
+      <a href="https://limitedcompanytaxcalculator.co.uk" target="_blank" rel="noopener" style="display:inline-block;background:var(--text-primary);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">LimitedCompanyTaxCalculator.co.uk →</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do contractors always pay dividend tax?</summary>
+          <div class="faq-answer">Not always. If your total dividend income falls within the £500 dividend allowance and your other income does not exceed the Personal Allowance, you may owe no dividend tax. Most contractors drawing meaningful dividends will exceed the £500 threshold and will owe some dividend tax.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is taking dividends more tax-efficient than salary?</summary>
+          <div class="faq-answer">For many limited company contractors, a combination of a low salary and dividends is more efficient than a high salary, because dividends are not subject to National Insurance. However, corporation tax is paid on profits first, so the benefit depends on your total income and profit levels. The optimal split varies by individual circumstances.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the dividend allowance for 2026/27?</summary>
+          <div class="faq-answer">The dividend allowance is £500 for 2026/27. This applies to all UK taxpayers, including contractors. Dividends within this amount are free from dividend tax. The allowance was reduced from £1,000 in April 2024.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does corporation tax affect how much personal dividend tax I pay?</summary>
+          <div class="faq-answer">Corporation tax and personal dividend tax are separate calculations. Your company pays corporation tax on its profits before dividends are declared. You then pay personal dividend tax on the dividends you receive. This calculator covers only the personal dividend tax side.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to file Self Assessment if I take dividends from my company?</summary>
+          <div class="faq-answer">Yes. If you are a director of a limited company and receive dividend income, you are generally required to complete a Self Assessment tax return each year. HMRC cannot collect dividend tax through PAYE automatically.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

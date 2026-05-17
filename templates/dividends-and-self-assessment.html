@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When must I file Self Assessment for dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "HMRC's general guidance is that you must register for Self Assessment if your dividend income exceeds £1,000 in a tax year, or £500 if you are already required to file a Self Assessment return for another reason. If your dividends are small and covered by the £500 allowance, you may not need to register — but check GOV.UK for the current rules as thresholds can change."}
+    },
+    {
+      "@type": "Question",
+      "name": "What if my dividends are under £500?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If your total dividend income is within the £500 dividend allowance and you are not already required to file Self Assessment, you may not need to register or report your dividends. However, if you are already registered for Self Assessment for any reason, you must still declare all dividend income on your return."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I declare dividends from a company I own?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If you own a limited company and receive dividends from it, you declare them on your Self Assessment return in the 'dividends from UK companies' section. You will need dividend vouchers showing the amount and date of each dividend payment. Your accountant can help you complete this correctly."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can HMRC collect dividend tax through PAYE?",
+      "acceptedAnswer": {"@type": "Answer", "text": "HMRC sometimes adjusts your PAYE tax code to collect small amounts of dividend tax (typically for amounts up to £10,000). However, if your dividend income is significant, you must file a Self Assessment return to declare and pay the tax owed."}
+    },
+    {
+      "@type": "Question",
+      "name": "What records do I need to keep for dividend income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You should keep dividend vouchers, broker statements and any dividend reinvestment confirmations. For shares in your own company, keep formal dividend vouchers signed by the directors and any board minutes authorising the dividend payment."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividends and Self Assessment 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    HMRC cannot automatically collect dividend tax through PAYE for most people. If your dividend income exceeds certain thresholds, you need to register for Self Assessment and declare it yourself. This guide explains when and how.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">When do dividends trigger Self Assessment?</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        According to HMRC guidance, you must register for Self Assessment if your dividend income exceeds £1,000 in a tax year. If you are already required to file Self Assessment for another reason (for example, you are self-employed or your income exceeds £100,000), the threshold is £500 of dividend income — that is, above the dividend allowance itself.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        If your dividends are small — within the £500 allowance — and you have no other reason to file Self Assessment, you may not need to register. However, thresholds can change, so always verify the current position on GOV.UK or with a tax adviser.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How dividend tax is estimated and paid</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        When you file your Self Assessment return, HMRC calculates the dividend tax owed based on the income you declare. Dividends are treated as the top slice of income — your salary and other non-dividend income fills the Personal Allowance (£12,570) and rate bands first, with dividends sitting on top.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The first £500 of dividend income each year is covered by the dividend allowance and taxed at 0%. Above that, dividend tax applies at 10.75% (basic rate), 35.75% (higher rate) or 39.35% (additional rate) depending on your total income level.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> An employee earns £40,000 salary and receives £2,500 in dividends outside an ISA in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Dividends of £2,500 exceed the £1,000 threshold, so Self Assessment is required.</li>
+        <li>Salary fills the Personal Allowance and sits in the basic-rate band.</li>
+        <li>Dividends sit on top in the basic-rate band.</li>
+        <li>First £500: dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Remaining £2,000 at 10.75% = <strong>approximately £215</strong>.</li>
+        <li><strong>Total dividend tax to declare and pay: approximately £215.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        This would be declared on the Self Assessment return for the 2026/27 tax year, due by 31 January 2028 for online returns.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How to declare dividend income on Self Assessment</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        On your Self Assessment tax return, dividend income is declared in the relevant boxes:
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li><strong>Dividends from UK companies</strong> — most dividends from UK-listed shares or your own company go here.</li>
+        <li><strong>Dividends from foreign companies</strong> — for dividends from overseas-listed shares, which may also be affected by withholding tax treaties.</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        You do not need to report dividends received inside an ISA or pension. Only dividends outside those wrappers are taxable and reportable.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Records to keep</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li>Dividend vouchers from each company paying a dividend</li>
+        <li>Annual statements from your broker or platform showing dividends received</li>
+        <li>Dividend reinvestment confirmations (if applicable)</li>
+        <li>For your own company: formal dividend vouchers and board minutes authorising each payment</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Use our calculator to see how much dividend tax you may owe before filing your Self Assessment return.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>When must I file Self Assessment for dividends?</summary>
+          <div class="faq-answer">HMRC's guidance is that you must register if your dividend income exceeds £1,000 in a tax year, or £500 if you are already required to file for another reason. If your dividends are small and within the £500 allowance, you may not need to register — but check GOV.UK for the current rules.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What if my dividends are under £500?</summary>
+          <div class="faq-answer">If your total dividend income is within the £500 dividend allowance and you are not already required to file Self Assessment, you may not need to register or report them. However, if you are already registered, you must still declare all dividend income on your return.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I declare dividends from a company I own?</summary>
+          <div class="faq-answer">You declare them on your Self Assessment return in the 'dividends from UK companies' section. You will need dividend vouchers showing the amount and date of each payment. Your accountant can help ensure these are recorded correctly.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can HMRC collect dividend tax through PAYE?</summary>
+          <div class="faq-answer">HMRC can sometimes adjust your PAYE tax code to collect small amounts of dividend tax. However, for significant dividend income you must file a Self Assessment return to declare and pay the tax owed.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What records do I need to keep?</summary>
+          <div class="faq-answer">Keep dividend vouchers, broker statements and dividend reinvestment confirmations. For your own company, keep formal dividend vouchers and board minutes authorising each dividend payment.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

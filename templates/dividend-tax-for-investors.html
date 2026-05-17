@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I pay tax on reinvested dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. If dividends are automatically reinvested (for example through a dividend reinvestment plan outside an ISA), they are still taxable in the year they are paid. The fact that cash is not physically received does not remove the tax liability. You should report reinvested dividends on your Self Assessment return if they exceed your dividend allowance."}
+    },
+    {
+      "@type": "Question",
+      "name": "What about dividends received inside a pension?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Dividends received within a pension (such as a SIPP or workplace pension) are free from income tax and dividend tax. They do not count towards the £500 dividend allowance. Like ISAs, pensions shelter investment growth from tax."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to report small dividend amounts?",
+      "acceptedAnswer": {"@type": "Answer", "text": "If your total dividend income is £500 or less (the dividend allowance) and you are not otherwise required to file a Self Assessment return, you may not need to report it. However, if your dividends exceed £1,000, or you are already registered for Self Assessment, you should declare them. Check GOV.UK for the current thresholds."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do ISA dividends count towards the £500 allowance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends received inside a Stocks and Shares ISA are completely tax-free and do not count towards the £500 dividend allowance. Only dividends outside an ISA are subject to dividend tax and count against the allowance."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax for Investors 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    If you hold shares or funds outside an ISA or pension, any dividends you receive may be subject to UK dividend tax. This guide explains how dividend tax applies to investors, with 2026/27 rates and a worked example.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Which dividends are taxable?</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Dividends received from shares and funds held outside an ISA or pension are subject to UK income tax. This includes dividends from:
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Individual shares held in a general investment account or trading account</li>
+        <li>Investment trusts, unit trusts or OEICs outside an ISA</li>
+        <li>Exchange-traded funds (ETFs) that distribute dividends, held outside an ISA</li>
+        <li>Foreign shares — though different rules may apply to withholding tax</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Dividends inside a Stocks and Shares ISA or pension are completely free from dividend tax. They also do not count towards the £500 dividend allowance.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How income ordering affects your rate</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Dividends are treated as the top slice of your total income. Your salary, pension, rental income and other non-dividend income fills the Personal Allowance (£12,570) and the rate bands first. Dividends then sit on top.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        This means that even if your dividends are relatively small, a high salary can push those dividends into the higher-rate or additional-rate band. The rate you pay on dividends depends on where they land across the bands — not on the dividends in isolation.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Band</th>
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Income range</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Dividend rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Basic rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Up to £50,270</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">10.75%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Higher rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">£50,271 – £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">35.75%</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.5rem;">Additional rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Above £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        The first £500 of dividend income each tax year is covered by the dividend allowance and is not taxed.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> An investor earns a salary of £30,000 and receives £3,000 in dividends from a share portfolio held outside an ISA in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £30,000 — sits within the basic-rate band after the Personal Allowance.</li>
+        <li>Dividends of £3,000 sit on top of the salary in the basic-rate band.</li>
+        <li>First £500 of dividends: covered by the dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Remaining £2,500 of dividends at 10.75% = <strong>£269</strong>.</li>
+        <li><strong>Total dividend tax: approximately £269.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        If those same dividends were inside a Stocks and Shares ISA, the tax would be £0.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Common mistakes</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><strong>Assuming all dividends are tax-free below £500.</strong> The £500 is an annual allowance across all taxable dividend sources. If you hold shares in multiple companies or funds outside an ISA, the dividends from all of them count together.</li>
+        <li><strong>Forgetting reinvested dividends.</strong> Dividends reinvested automatically (DRIP plans) are still taxable in the year they are paid, even if you don't receive cash.</li>
+        <li><strong>Not accounting for salary when estimating dividend tax.</strong> Because dividends are the top slice, a higher salary reduces how much of the basic-rate band is available for dividends at 10.75%.</li>
+        <li><strong>Thinking ISA dividends count against the allowance.</strong> They don't. ISA dividends are completely outside the dividend tax system.</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a full breakdown at 10.75%, 35.75% and 39.35%.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I pay tax on reinvested dividends?</summary>
+          <div class="faq-answer">Yes. If dividends are automatically reinvested outside an ISA, they are still taxable in the year they are paid. The fact that cash is not physically received does not remove the tax liability. You should report reinvested dividends on your Self Assessment return if they exceed your allowance.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What about dividends received inside a pension?</summary>
+          <div class="faq-answer">Dividends received within a pension (such as a SIPP or workplace pension) are free from income tax and dividend tax. They do not count towards the £500 dividend allowance.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to report small dividend amounts?</summary>
+          <div class="faq-answer">If your total dividend income is within the £500 allowance and you are not otherwise required to file a Self Assessment return, you may not need to report it. However, if your dividends exceed £1,000, or you are already registered for Self Assessment, you should declare them. Check GOV.UK for the current reporting thresholds.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do ISA dividends count towards the £500 allowance?</summary>
+          <div class="faq-answer">No. Dividends received inside a Stocks and Shares ISA are completely tax-free and do not count towards the £500 dividend allowance. Only dividends outside an ISA count against the allowance and are potentially taxable.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

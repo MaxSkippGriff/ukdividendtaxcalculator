@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I use my personal allowance against dividend income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, but only if your non-savings income (salary, pension, self-employment) does not use up the full Personal Allowance. The Personal Allowance is applied to non-savings income first. If your salary is below £12,570, the unused portion of the Personal Allowance can shelter dividend income from tax."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the dividend allowance reduce the personal allowance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The £500 dividend allowance is completely separate from the Personal Allowance. They are independent of each other. The Personal Allowance (£12,570) is applied to non-savings income first. The £500 dividend allowance then applies to dividend income on top of whatever Personal Allowance may remain."}
+    },
+    {
+      "@type": "Question",
+      "name": "When do dividends use the personal allowance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Dividends can use the Personal Allowance only when your non-savings income is below £12,570. For example, if your salary is £8,000, the remaining £4,570 of Personal Allowance (£12,570 minus £8,000) can be used against dividend income. If your salary is £12,570 or above, no Personal Allowance remains for dividends."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividends and the Personal Allowance 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    The Personal Allowance (£12,570 in 2026/27) can absorb dividend income if your salary does not fully use it. This guide explains the order of income for tax purposes, when the allowance applies to dividends, and how to calculate the result.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The Personal Allowance in 2026/27</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        The standard Personal Allowance for 2026/27 is £12,570. This is the amount of income you can receive each year before paying income tax. It has been frozen at £12,570 since April 2021 and remains at that level for 2026/27.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The Personal Allowance tapers for higher earners. For every £2 of income above £100,000, you lose £1 of Personal Allowance. It reaches £0 when income hits £125,140. Above that level there is no Personal Allowance at all.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Order of income: salary first, dividends last</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        HMRC uses a fixed order when applying the Personal Allowance and rate bands:
+      </p>
+      <ol style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li><strong>Non-savings income</strong> — employment income, pensions, profits from self-employment or property. The Personal Allowance is set against this first.</li>
+        <li><strong>Savings income</strong> — bank interest, bond income.</li>
+        <li><strong>Dividend income</strong> — dividends from shares, funds, and unit trusts. Sits on top of everything else.</li>
+      </ol>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Because dividends sit at the top of the stack, the Personal Allowance can only reach dividend income if there is unused allowance left after non-savings income has been accounted for. If your salary equals or exceeds £12,570, no allowance remains for dividends.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The dividend allowance is separate</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The £500 dividend allowance is completely independent of the Personal Allowance. It applies to dividend income specifically, regardless of whether any Personal Allowance remains. Even a basic-rate taxpayer with a salary of £40,000 — who has no Personal Allowance available for dividends — still gets the £500 dividend allowance. The two allowances do not interact or reduce each other.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: low salary, dividends use remaining Personal Allowance</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> Salary £8,000, dividends £9,000 in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Personal Allowance: £12,570. Salary of £8,000 uses £8,000 of it.</li>
+        <li>Remaining Personal Allowance: £12,570 − £8,000 = <strong>£4,570</strong>. This covers £4,570 of dividend income tax-free.</li>
+        <li>Dividend allowance: next £500 of dividends is also tax-free.</li>
+        <li>Tax-free dividends: £4,570 + £500 = £5,070.</li>
+        <li>Taxable dividends: £9,000 − £5,070 = £3,930.</li>
+        <li>All remaining income is within the basic-rate band (total income £17,000 — well below £50,270).</li>
+        <li>Dividend tax: £3,930 × 10.75% = <strong>£423</strong>.</li>
+        <li><strong>Total dividend tax: £423.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        Without the unused Personal Allowance, tax would have been £8,500 × 10.75% = £914. The unused Personal Allowance saves £491 of dividend tax in this example.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: full salary, no Personal Allowance for dividends</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> Salary £30,000, dividends £9,000 in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £30,000 exceeds the Personal Allowance — no unused allowance for dividends.</li>
+        <li>Dividend allowance: first £500 of dividends is tax-free.</li>
+        <li>Taxable dividends: £9,000 − £500 = £8,500.</li>
+        <li>Total income: £39,000 — still within the basic-rate band.</li>
+        <li>Dividend tax: £8,500 × 10.75% = <strong>£914</strong>.</li>
+        <li><strong>Total dividend tax: £914.</strong></li>
+      </ul>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The Personal Allowance taper above £100,000</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        If your adjusted net income exceeds £100,000, the Personal Allowance is reduced by £1 for every £2 of income above that level. At £125,140, the Personal Allowance reaches £0 and you become an additional-rate taxpayer.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        In the taper zone (£100,000–£125,140), dividend income counts towards your adjusted net income and can accelerate the loss of the Personal Allowance. This creates an effective marginal rate that is higher than the headline rate. Pension contributions can reduce adjusted net income and help restore the Personal Allowance.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">See how your allowances affect your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a full breakdown of how the Personal Allowance and dividend allowance interact.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/guidance/adjusted-net-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Adjusted net income guidance</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can I use my personal allowance against dividend income?</summary>
+          <div class="faq-answer">Yes, but only if your non-savings income (salary, pension) does not fully use the Personal Allowance. The allowance is applied to non-savings income first. If your salary is below £12,570, the unused portion can shelter dividend income from tax. If your salary equals or exceeds £12,570, no allowance remains for dividends.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the dividend allowance reduce the personal allowance?</summary>
+          <div class="faq-answer">No. The £500 dividend allowance and the Personal Allowance (£12,570) are completely separate. They do not interact or reduce each other. You benefit from both — the Personal Allowance on non-savings income and the £500 dividend allowance on top of that.</div>
+        </details>
+        <details class="faq-item">
+          <summary>When do dividends use the personal allowance?</summary>
+          <div class="faq-answer">Dividends use the Personal Allowance only when your non-savings income is below £12,570. For example, with a salary of £8,000, the remaining £4,570 of Personal Allowance can be used against dividend income. If your salary is £12,570 or more, no Personal Allowance is available for dividends.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

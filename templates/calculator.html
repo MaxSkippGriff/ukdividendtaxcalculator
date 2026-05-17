@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="badge">Calculator</div>
+  <h1>UK Dividend Tax Calculator 2026/27</h1>
+  <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Estimate dividend tax due after the £500 dividend allowance, split across basic (8.75%), higher (33.75%) and additional (39.35%) rate bands.</p>
+
+  <div class="calc-widget">
+    <div class="calc-widget-header">
+      <h2>Dividend Tax</h2>
+      <span class="calc-year-badge">2026/27 · £500 allowance</span>
+    </div>
+    <div class="calc-widget-body">
+      <div class="calc-grid-2">
+        <div class="field">
+          <label>Employment / other income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="salary" value="30000" min="0" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <label>Dividend income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="dividends" value="5000" min="0" oninput="calculate()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-widget-results">
+      <div class="results-row"><span class="results-label">Dividend allowance used</span><span class="results-value">£<span id="r_allowance_used">0</span></span></div>
+      <div class="results-row"><span class="results-label">Basic rate dividend tax (8.75%)</span><span class="results-value">£<span id="r_basic_tax">0</span></span></div>
+      <div class="results-row"><span class="results-label">Higher rate dividend tax (33.75%)</span><span class="results-value">£<span id="r_higher_tax">0</span></span></div>
+      <div class="results-row"><span class="results-label">Additional rate dividend tax (39.35%)</span><span class="results-value">£<span id="r_additional_tax">0</span></span></div>
+      <div class="results-row results-total"><span class="results-label">Total dividend tax</span><span class="results-value">£<span id="r_total_tax">0</span></span></div>
+      <div class="results-row"><span class="results-label">Income tax on employment income</span><span class="results-value">£<span id="r_income_tax">0</span></span></div>
+    </div>
+  </div>
+
+  <article class="card">
+    <h2>How dividend tax is calculated</h2>
+    <p>Dividends are taxed after all other income. The £500 dividend allowance shelters the first £500 of dividends from tax. Above that, the rate depends on which income tax band the dividends fall in:</p>
+    <ul style="padding-left:1.25rem;font-size:0.9rem;color:var(--text-secondary);line-height:1.8;margin-top:0.25rem;margin-bottom:0.85rem;">
+      <li><strong>8.75%</strong> — basic rate band (total income up to £50,270)</li>
+      <li><strong>33.75%</strong> — higher rate band (£50,271–£125,140)</li>
+      <li><strong>39.35%</strong> — additional rate band (above £125,140)</li>
+    </ul>
+    <p style="margin-bottom:0;">Employment and other non-dividend income fills the lower bands first, pushing dividends into higher bands if applicable.</p>
+  </article>
+
+  <article class="card">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is the dividend allowance for 2026/27?</summary>
+        <div class="faq-answer">
+          <p>The dividend allowance is £500 for 2026/27 (reduced from £1,000 in 2023/24 and £2,000 previously). Dividends within the allowance are not taxed, but they still use up your basic or higher rate band when determining how much tax-free room remains.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need to declare dividends on Self Assessment?</summary>
+        <div class="faq-answer">
+          <p>Yes, if your total dividend income exceeds £500. You must register for Self Assessment and file a tax return. HMRC cannot collect dividend tax through PAYE.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Are dividends from ISAs taxable?</summary>
+        <div class="faq-answer">
+          <p>No. Dividends received within a Stocks and Shares ISA are completely free from UK tax and do not need to be declared on a tax return.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Does the personal allowance affect dividend tax?</summary>
+        <div class="faq-answer">
+          <p>Yes. If your total income (employment plus dividends) is within the personal allowance (£12,570), no tax is due on any of it. The personal allowance is used up first by non-dividend income, with any remaining allowance set against dividends.</p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <article class="card">
+    <h2>Official sources</h2>
+    <ul style="padding-left:1.25rem;font-size:0.9rem;color:var(--text-secondary);line-height:1.8;margin-top:0.25rem;margin-bottom:0;">
+      <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+      <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income Tax rates and Personal Allowances</a></li>
+    </ul>
+  </article>
+
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-top:1.5rem;">This calculator provides estimates only. It does not constitute financial, tax or legal advice. Always check current GOV.UK guidance and consult a qualified adviser before making decisions.</p>
+</section>
+
+<script>
+const PERSONAL_ALLOWANCE = 12570;
+const BASIC_RATE_LIMIT = 50270;
+const ADDITIONAL_RATE_THRESHOLD = 125140;
+const DIVIDEND_ALLOWANCE = 500;
+const BASIC_RATE = 0.20;
+const HIGHER_RATE = 0.40;
+const ADDITIONAL_RATE = 0.45;
+const DIV_BASIC = 0.0875;
+const DIV_HIGHER = 0.3375;
+const DIV_ADDITIONAL = 0.3935;
+
+function calcIncomeTax(income) {
+  if (income <= 0) return 0;
+  const abovePA = Math.max(0, income - PERSONAL_ALLOWANCE);
+  const basic = Math.min(abovePA, BASIC_RATE_LIMIT - PERSONAL_ALLOWANCE);
+  const higher = Math.max(0, Math.min(abovePA - basic, ADDITIONAL_RATE_THRESHOLD - BASIC_RATE_LIMIT));
+  const additional = Math.max(0, abovePA - basic - higher);
+  return basic * BASIC_RATE + higher * HIGHER_RATE + additional * ADDITIONAL_RATE;
+}
+
+function calculate() {
+  const salary = +document.getElementById('salary').value || 0;
+  const dividends = +document.getElementById('dividends').value || 0;
+
+  const incomeTax = calcIncomeTax(salary);
+
+  // PA used by salary first; remaining PA against dividends
+  const paRemaining = Math.max(0, PERSONAL_ALLOWANCE - salary);
+  const divsAfterPA = Math.max(0, dividends - paRemaining);
+
+  const allowanceUsed = Math.min(divsAfterPA, DIVIDEND_ALLOWANCE);
+  const taxableDivs = Math.max(0, divsAfterPA - DIVIDEND_ALLOWANCE);
+
+  // How much basic rate band remains after salary
+  const salaryAbovePA = Math.max(0, salary - PERSONAL_ALLOWANCE);
+  const remainingBasic = Math.max(0, (BASIC_RATE_LIMIT - PERSONAL_ALLOWANCE) - salaryAbovePA);
+  // Dividend allowance itself uses up band
+  const remainingBasicAfterAllowance = Math.max(0, remainingBasic - allowanceUsed);
+  const remainingHigher = Math.max(0, (ADDITIONAL_RATE_THRESHOLD - BASIC_RATE_LIMIT) - Math.max(0, salaryAbovePA - (BASIC_RATE_LIMIT - PERSONAL_ALLOWANCE)));
+
+  const divInBasic = Math.min(taxableDivs, remainingBasicAfterAllowance);
+  const divInHigher = Math.max(0, Math.min(taxableDivs - divInBasic, remainingHigher));
+  const divInAdditional = Math.max(0, taxableDivs - divInBasic - divInHigher);
+
+  const basicTax = divInBasic * DIV_BASIC;
+  const higherTax = divInHigher * DIV_HIGHER;
+  const additionalTax = divInAdditional * DIV_ADDITIONAL;
+  const totalTax = basicTax + higherTax + additionalTax;
+
+  const fmt = n => n.toLocaleString('en-GB', {minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById('r_allowance_used').textContent = fmt(allowanceUsed);
+  document.getElementById('r_basic_tax').textContent = fmt(basicTax);
+  document.getElementById('r_higher_tax').textContent = fmt(higherTax);
+  document.getElementById('r_additional_tax').textContent = fmt(additionalTax);
+  document.getElementById('r_total_tax').textContent = fmt(totalTax);
+  document.getElementById('r_income_tax').textContent = fmt(incomeTax);
+}
+window.onload = calculate;
+</script>
+{% endblock %}

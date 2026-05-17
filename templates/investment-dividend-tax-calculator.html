@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="badge">Calculator</div>
+  <h1>Investment Dividend Tax Calculator 2026/27</h1>
+  <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Estimate tax on dividends from UK or overseas shares held outside an ISA or pension. Dividends inside a Stocks &amp; Shares ISA are completely tax-free — only non-ISA dividends are counted here.</p>
+
+  <div class="calc-widget">
+    <div class="calc-widget-header">
+      <h2>Investment Dividend Tax</h2>
+      <span class="calc-year-badge">2026/27</span>
+    </div>
+    <div class="calc-widget-body">
+      <div class="calc-grid-2">
+        <div class="field">
+          <label>Employment / pension income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="employment_income" value="40000" min="0" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <label>Dividend income outside ISA / pension</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="dividend_income" value="8000" min="0" oninput="calculate()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-widget-results">
+      <div class="results-row"><span class="results-label">Personal allowance applied to dividends</span><span class="results-value">£<span id="r_pa_applied">0</span></span></div>
+      <div class="results-row"><span class="results-label">Dividend allowance used</span><span class="results-value">£<span id="r_allowance">0</span></span></div>
+      <div class="results-row"><span class="results-label">Taxable dividends</span><span class="results-value">£<span id="r_taxable">0</span></span></div>
+      <div class="results-row results-total"><span class="results-label">Dividend tax estimate</span><span class="results-value">£<span id="r_total">0</span></span></div>
+      <p class="calc-disclaimer">Estimates only. Does not include income tax on employment income or capital gains tax.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--surface-alt);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;">
+    <p style="font-size:0.88rem;color:var(--text-primary);margin:0;line-height:1.6;"><strong>ISA tip:</strong> Dividends inside a Stocks &amp; Shares ISA are completely tax-free — no dividend tax regardless of amount. Consider sheltering high-yield investments in your ISA allowance first. The 2026/27 ISA allowance is £20,000.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">About investment dividend tax</h2>
+    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">When you hold shares or funds outside an ISA or pension, any dividends received count towards your taxable income. Your employment or pension income fills the tax bands first; dividends then sit on top. The £500 dividend allowance and any remaining Personal Allowance reduce the taxable amount before the relevant dividend rate is applied.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Related guides &amp; calculators</h2>
+    <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
+      <li><a href="/dividend-tax-for-investors" style="color:var(--accent);">Dividend tax for investors</a></li>
+      <li><a href="/dividends-inside-isa" style="color:var(--accent);">Dividends inside an ISA</a></li>
+      <li><a href="/dividend-tax-and-isa" style="color:var(--accent);">Dividend tax and ISA</a></li>
+      <li><a href="/dividend-allowance-calculator" style="color:var(--accent);">Dividend Allowance Calculator</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <strong>Are dividends from overseas shares taxed the same way?</strong>
+        <p>UK dividend tax applies to overseas dividends received outside an ISA or pension in the same way as UK dividends. You may also have had foreign withholding tax deducted at source — you can often claim relief against your UK tax bill via Self Assessment.</p>
+      </li>
+      <li class="faq-item">
+        <strong>Do I need to report investment dividends on Self Assessment?</strong>
+        <p>You must file Self Assessment if your total dividend income exceeds £1,000 in a tax year (or £500 if you are already required to file). HMRC cannot collect dividend tax through PAYE.</p>
+      </li>
+      <li class="faq-item">
+        <strong>Does this calculator handle fund distributions?</strong>
+        <p>This calculator treats all dividend income equally regardless of source. Note that some fund distributions may be classified as interest (not dividends) and taxed differently — check your fund documentation or annual tax certificate.</p>
+      </li>
+    </ul>
+  </div>
+
+  <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;">Disclaimer: Results are estimates based on 2026/27 rates. This tool does not constitute financial or tax advice.</p>
+</section>
+
+<script>
+const PERSONAL_ALLOWANCE = 12570;
+const BASIC_RATE_LIMIT = 50270;
+const ADDITIONAL_RATE_THRESHOLD = 125140;
+const DIVIDEND_ALLOWANCE = 500;
+const DIV_BASIC = 0.1075;
+const DIV_HIGHER = 0.3575;
+const DIV_ADDITIONAL = 0.3935;
+
+function calculate() {
+  const salary = +document.getElementById('employment_income').value || 0;
+  const dividends = +document.getElementById('dividend_income').value || 0;
+
+  const remainingPA = Math.max(0, PERSONAL_ALLOWANCE - salary);
+  const paApplied = Math.min(dividends, remainingPA);
+  const divAfterPA = Math.max(0, dividends - remainingPA);
+  const allowanceUsed = Math.min(divAfterPA, DIVIDEND_ALLOWANCE);
+  const taxableDivs = Math.max(0, divAfterPA - allowanceUsed);
+
+  const basicRemaining = Math.max(0, BASIC_RATE_LIMIT - salary);
+  const divAtBasic = Math.min(taxableDivs, basicRemaining);
+  const rem1 = taxableDivs - divAtBasic;
+  const higherRemaining = Math.max(0, ADDITIONAL_RATE_THRESHOLD - Math.max(salary, BASIC_RATE_LIMIT) - divAtBasic);
+  const divAtHigher = Math.min(rem1, higherRemaining);
+  const divAtAdditional = rem1 - divAtHigher;
+
+  const totalTax = divAtBasic * DIV_BASIC + divAtHigher * DIV_HIGHER + divAtAdditional * DIV_ADDITIONAL;
+
+  const fmt = n => n.toLocaleString('en-GB', {minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById('r_pa_applied').textContent = fmt(paApplied);
+  document.getElementById('r_allowance').textContent = fmt(allowanceUsed);
+  document.getElementById('r_taxable').textContent = fmt(taxableDivs);
+  document.getElementById('r_total').textContent = fmt(totalTax);
+}
+window.onload = calculate;
+</script>
+{% endblock %}

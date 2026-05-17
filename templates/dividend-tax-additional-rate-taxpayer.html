@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What rate do additional-rate taxpayers pay on dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Additional-rate taxpayers pay 39.35% on dividend income above the £500 dividend allowance. This rate applies when your total income exceeds £125,140 in 2026/27. The first £500 of dividends is still tax-free under the dividend allowance."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the dividend allowance apply at the additional rate?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The £500 dividend allowance applies to all UK taxpayers, including those paying tax at the additional rate. Even if your total income exceeds £125,140, the first £500 of dividend income in each tax year is free from dividend tax."}
+    },
+    {
+      "@type": "Question",
+      "name": "At what income level does the 39.35% dividend rate kick in?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The 39.35% additional-rate dividend tax applies when your total income — including dividends — exceeds £125,140. This threshold has applied since April 2023. The previous threshold was £150,000. If your income is between £100,000 and £125,140 your Personal Allowance is also being tapered away, which increases your effective tax rate."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax for Additional-Rate Taxpayers 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Additional-rate taxpayers pay 39.35% on dividends above the £500 allowance. This guide covers who qualifies as an additional-rate taxpayer, the key threshold, and a worked example for 2026/27.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Who is an additional-rate taxpayer?</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        You become an additional-rate taxpayer when your total income exceeds £125,140 in a tax year. This threshold has applied since April 2023, when it was reduced from the previous level of £150,000. Above £125,140, you pay 39.35% on dividend income (above the £500 allowance), 45% on non-savings income, and 45% on savings income.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        At this level of income, the Personal Allowance has also been fully tapered away. The taper begins at £100,000, with £1 of Personal Allowance lost for every £2 of income above that level. At £125,140 the Personal Allowance reaches £0. There is no Personal Allowance available to shelter any income.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The £125,140 threshold — not £150,000</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        A common mistake is to use £150,000 as the additional-rate threshold. This was the threshold before April 2023. Since then, it has been £125,140. If you have income between £125,140 and £150,000, you are already an additional-rate taxpayer and pay 39.35% on dividends.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The £100,000–£125,140 band is also worth noting. In that range, your Personal Allowance is being gradually withdrawn, creating an effective marginal income tax rate of 60% on non-savings income in that band. Dividends in that range are taxed at 35.75% (the higher-rate dividend rate), but the loss of Personal Allowance on salary income makes careful income planning particularly important.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The £500 dividend allowance still applies</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Even at the additional rate, the first £500 of dividend income each tax year is covered by the dividend allowance and is completely free from dividend tax. This applies to every UK taxpayer. Dividends above £500 are then taxed at 39.35%.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> Total income £140,000, dividends £20,000 (included within the £140,000 total) in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Total income of £140,000 exceeds £125,140 — additional-rate taxpayer.</li>
+        <li>Personal Allowance: £0 (fully tapered away above £125,140).</li>
+        <li>All dividend income sits in the additional-rate band.</li>
+        <li>First £500 of dividends: covered by the dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Taxable dividends: £20,000 − £500 = £19,500.</li>
+        <li>Dividend tax: £19,500 × 39.35% = <strong>£7,673</strong>.</li>
+        <li><strong>Total dividend tax: £7,673.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        Non-dividend income tax (on salary, pension etc.) is separate from this calculation.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Limited company directors at this income level</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        For limited company directors with income above £125,140, taking salary up to the Personal Allowance level is no longer possible (the PA is zero). The optimal salary/dividend split at this level depends on individual circumstances and should be modelled carefully, ideally with a qualified accountant.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Key considerations include: corporation tax on company profits (19% or 25%), employer and employee NIC on salary, and the 39.35% personal dividend tax rate. At this level there are also significant pension contribution opportunities that can reduce the adjusted net income below £125,140 and restore some or all of the Personal Allowance.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Band</th>
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Total income</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Dividend rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Basic rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Up to £50,270</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">10.75%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Higher rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">£50,271 – £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">35.75%</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.5rem;font-weight:600;">Additional rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Above £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin-top:0.6rem;margin-bottom:0;">
+        The first £500 of dividends each year is free from tax at all rates. No Personal Allowance applies above £125,140.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a breakdown including the 39.35% additional rate.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What rate do additional-rate taxpayers pay on dividends?</summary>
+          <div class="faq-answer">Additional-rate taxpayers pay 39.35% on dividend income above the £500 dividend allowance. This rate applies when total income exceeds £125,140 in 2026/27. The first £500 of dividends is free from tax.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the dividend allowance apply at the additional rate?</summary>
+          <div class="faq-answer">Yes. The £500 dividend allowance applies to all UK taxpayers including additional-rate taxpayers. Even with income above £125,140, the first £500 of dividend income each tax year is completely free from dividend tax.</div>
+        </details>
+        <details class="faq-item">
+          <summary>At what income level does the 39.35% rate kick in?</summary>
+          <div class="faq-answer">The 39.35% dividend rate applies when your total income exceeds £125,140. This threshold has applied since April 2023, when it was reduced from £150,000. Note that between £100,000 and £125,140 your Personal Allowance is also being tapered away, increasing your effective tax burden significantly.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

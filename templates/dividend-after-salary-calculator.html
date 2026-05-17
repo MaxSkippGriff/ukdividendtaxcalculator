@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="badge">Calculator</div>
+  <h1>Dividend Tax After Salary Calculator 2026/27</h1>
+  <p style="color:var(--text-secondary);margin-bottom:1.25rem;">See how your salary or other income uses up tax bands before dividends are assessed. Dividends sit on top of non-dividend income, so your salary determines how much basic-rate space remains for dividend income.</p>
+
+  <div class="calc-widget">
+    <div class="calc-widget-header">
+      <h2>Dividend Tax After Salary</h2>
+      <span class="calc-year-badge">2026/27</span>
+    </div>
+    <div class="calc-widget-body">
+      <div class="calc-grid-2">
+        <div class="field">
+          <label>Employment / pension income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="salary" value="35000" min="0" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <label>Dividend income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="dividends" value="15000" min="0" oninput="calculate()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-widget-results">
+      <div class="results-row"><span class="results-label">Basic-rate band used by salary</span><span class="results-value">£<span id="r_band_used">0</span></span></div>
+      <div class="results-row"><span class="results-label">Basic-rate band remaining for dividends</span><span class="results-value">£<span id="r_band_remaining">0</span></span></div>
+      <div class="results-row"><span class="results-label">Dividend allowance used</span><span class="results-value">£<span id="r_allowance">0</span></span></div>
+      <div class="results-row"><span class="results-label">Dividend tax at 10.75%</span><span class="results-value">£<span id="r_basic">0</span></span></div>
+      <div class="results-row"><span class="results-label">Dividend tax at 35.75%</span><span class="results-value">£<span id="r_higher">0</span></span></div>
+      <div class="results-row results-total"><span class="results-label">Total dividend tax</span><span class="results-value">£<span id="r_total">0</span></span></div>
+      <p class="calc-disclaimer">Estimates only. Does not include income tax or National Insurance on your salary.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">How salary affects dividend tax</h2>
+    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">HMRC treats dividends as the top slice of income. Your salary fills the Personal Allowance (£12,570) and basic-rate band (up to £50,270 total income) first. Only the remaining basic-rate space is available for dividends before the 35.75% higher rate applies. A salary of £35,000 leaves £15,270 of basic-rate band for dividends — this calculator makes that split visible.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Related calculators &amp; guides</h2>
+    <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
+      <li><a href="/director-dividend-calculator" style="color:var(--accent);">Director Dividend Calculator</a></li>
+      <li><a href="/dividend-allowance-calculator" style="color:var(--accent);">Dividend Allowance Calculator</a></li>
+      <li><a href="/dividend-tax-higher-rate-taxpayer" style="color:var(--accent);">Dividend tax for higher-rate taxpayers</a></li>
+      <li><a href="/dividend-tax-basic-rate-taxpayer" style="color:var(--accent);">Dividend tax for basic-rate taxpayers</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <strong>Why do dividends stack on top of salary?</strong>
+        <p>HMRC's ordering rules treat non-savings income (salary, pension) as the lowest slice, then savings income, then dividends at the top. This means salary fills the tax bands first, and dividends are taxed at whatever rate applies to the income above that level.</p>
+      </li>
+      <li class="faq-item">
+        <strong>What if my salary already exceeds £50,270?</strong>
+        <p>If your salary alone exceeds the basic-rate limit of £50,270, all of your dividends will fall into the higher-rate band (35.75%) or above, after the £500 dividend allowance. There is no basic-rate band remaining for dividends.</p>
+      </li>
+      <li class="faq-item">
+        <strong>Does this calculator include the dividend allowance?</strong>
+        <p>Yes. The £500 dividend allowance is applied before calculating taxable dividends. Dividends up to £500 (after using any remaining Personal Allowance) are free from dividend tax.</p>
+      </li>
+    </ul>
+  </div>
+
+  <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;">Disclaimer: Results are estimates based on 2026/27 rates. This tool does not constitute financial or tax advice.</p>
+</section>
+
+<script>
+const PERSONAL_ALLOWANCE = 12570;
+const BASIC_RATE_LIMIT = 50270;
+const ADDITIONAL_RATE_THRESHOLD = 125140;
+const DIVIDEND_ALLOWANCE = 500;
+const DIV_BASIC = 0.1075;
+const DIV_HIGHER = 0.3575;
+const DIV_ADDITIONAL = 0.3935;
+
+function calculate() {
+  const salary = +document.getElementById('salary').value || 0;
+  const dividends = +document.getElementById('dividends').value || 0;
+  const totalNonDiv = salary;
+
+  const remainingPA = Math.max(0, PERSONAL_ALLOWANCE - totalNonDiv);
+  const divAfterPA = Math.max(0, dividends - remainingPA);
+  const allowanceUsed = Math.min(divAfterPA, DIVIDEND_ALLOWANCE);
+  const taxableDivs = Math.max(0, divAfterPA - allowanceUsed);
+
+  const basicBandUsed = Math.max(0, Math.min(totalNonDiv, BASIC_RATE_LIMIT) - PERSONAL_ALLOWANCE);
+  const basicRemaining = Math.max(0, BASIC_RATE_LIMIT - totalNonDiv);
+  const divAtBasic = Math.min(taxableDivs, basicRemaining);
+  const rem1 = taxableDivs - divAtBasic;
+  const higherRemaining = Math.max(0, ADDITIONAL_RATE_THRESHOLD - Math.max(totalNonDiv, BASIC_RATE_LIMIT) - divAtBasic);
+  const divAtHigher = Math.min(rem1, higherRemaining);
+
+  const taxBasic = divAtBasic * DIV_BASIC;
+  const taxHigher = divAtHigher * DIV_HIGHER;
+  const totalTax = taxBasic + taxHigher;
+
+  const fmt = n => n.toLocaleString('en-GB', {minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById('r_band_used').textContent = fmt(basicBandUsed);
+  document.getElementById('r_band_remaining').textContent = fmt(basicRemaining);
+  document.getElementById('r_allowance').textContent = fmt(allowanceUsed);
+  document.getElementById('r_basic').textContent = fmt(taxBasic);
+  document.getElementById('r_higher').textContent = fmt(taxHigher);
+  document.getElementById('r_total').textContent = fmt(totalTax);
+}
+window.onload = calculate;
+</script>
+{% endblock %}

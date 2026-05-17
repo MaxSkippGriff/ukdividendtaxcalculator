@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are dividends inside an ISA taxed?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends received inside a Stocks and Shares ISA are completely free from UK income tax and dividend tax. There is no limit on the amount of dividends you can earn tax-free within your ISA, provided your ISA subscription does not exceed the annual limit (£20,000 for 2026/27)."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do ISA dividends count towards the £500 dividend allowance?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. ISA dividends are entirely outside the dividend tax system. They do not count towards the £500 dividend allowance and do not affect how much dividend tax you owe on dividends outside the ISA."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I put my dividends into an ISA?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You cannot move cash dividends paid from shares held outside an ISA into an ISA after they have been paid — that would count as a new ISA subscription and would use up your annual allowance. However, if you hold shares or funds inside a Stocks and Shares ISA, any dividends paid on those holdings automatically stay within the ISA wrapper and are tax-free."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do ISA dividends affect my Self Assessment?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends received inside an ISA do not need to be reported on a Self Assessment return. They are tax-free and outside the dividend tax system entirely."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a limit on how much dividend I can earn inside an ISA?",
+      "acceptedAnswer": {"@type": "Answer", "text": "There is no limit on the amount of dividends you can earn tax-free inside an ISA. The only limit is on how much you can pay into an ISA each year (£20,000 for 2026/27). Growth and income inside the ISA — including dividends — are not subject to any cap."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Are Dividends Inside an ISA Taxed?</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    No — dividends received inside a Stocks and Shares ISA are completely free from UK income tax and dividend tax. They don't count towards the £500 dividend allowance either. This guide explains how ISA dividends differ from taxable dividends held outside an ISA.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How ISA dividend protection works</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        A Stocks and Shares ISA acts as a tax-free wrapper around your investments. Any dividends paid on shares or funds held inside the ISA remain within that wrapper and are never subject to income tax or dividend tax — regardless of how large those dividends are or what tax band you are in.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        ISA dividends also do not appear on your Self Assessment return and do not affect your dividend allowance. They are, in effect, invisible to the UK dividend tax system.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">ISA allowance for 2026/27</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        You can pay up to <strong>£20,000</strong> into ISAs in total across the 2026/27 tax year. This can be split across a Cash ISA, Stocks and Shares ISA, Innovative Finance ISA and Lifetime ISA (the Lifetime ISA has a separate £4,000 limit within the overall £20,000).
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Crucially, once money is inside the ISA, any dividends earned on that money are not capped or limited. A large portfolio accumulated over many years can generate significant dividend income entirely free of tax.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example — ISA vs outside ISA</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> An investor with a salary of £30,000 receives £5,000 in dividends from a share portfolio in 2026/27.
+      </p>
+      <h3 style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Inside a Stocks and Shares ISA:</h3>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.75rem;">
+        <li>£5,000 dividends — completely tax-free inside the ISA.</li>
+        <li><strong>Dividend tax: £0.</strong></li>
+      </ul>
+      <h3 style="font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Outside an ISA (in a general investment account):</h3>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £30,000 uses the basic-rate band. Dividends sit on top.</li>
+        <li>First £500: dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Remaining £4,500 at 10.75% = <strong>£484</strong>.</li>
+        <li><strong>Dividend tax: approximately £484.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        The same £5,000 in dividends costs nothing inside an ISA but costs £484 outside one.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Common confusion</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><strong>ISA dividends count towards the £500 allowance — they don't.</strong> The dividend allowance applies only to dividends outside the ISA wrapper. ISA dividends are entirely separate and do not reduce your allowance.</li>
+        <li><strong>You can transfer dividends from outside an ISA into one.</strong> You cannot do this directly — cash dividends received outside an ISA would count as a new subscription if paid into an ISA. To benefit from ISA protection, the investment itself must be held inside the ISA.</li>
+        <li><strong>ISA dividends need to be reported on Self Assessment.</strong> They don't. ISA dividends are tax-free and not reportable. You only declare dividends received outside the ISA wrapper.</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate tax on dividends outside your ISA</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Use our calculator to estimate the dividend tax on income held outside an ISA or pension.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Are dividends inside an ISA taxed?</summary>
+          <div class="faq-answer">No. Dividends received inside a Stocks and Shares ISA are completely free from UK income tax and dividend tax. There is no limit on the amount of dividends you can earn tax-free within your ISA, provided your annual ISA subscription is within the £20,000 limit.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do ISA dividends count towards the £500 dividend allowance?</summary>
+          <div class="faq-answer">No. ISA dividends are entirely outside the dividend tax system. They do not count towards the £500 dividend allowance and do not affect how much dividend tax you owe on dividends outside the ISA.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I put my dividends into an ISA?</summary>
+          <div class="faq-answer">You cannot move dividends already received outside an ISA into one after the fact — that would count as a new ISA subscription. However, dividends paid on investments held inside a Stocks and Shares ISA automatically stay within the ISA wrapper and are tax-free.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do ISA dividends affect my Self Assessment?</summary>
+          <div class="faq-answer">No. Dividends received inside an ISA do not need to be reported on a Self Assessment return. They are tax-free and outside the dividend tax system entirely.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Is there a limit on how much dividend I can earn inside an ISA?</summary>
+          <div class="faq-answer">There is no limit on the dividends you can earn tax-free inside an ISA. The only limit is on annual subscriptions (£20,000 for 2026/27). Growth and income inside the ISA, including dividends, are not subject to any additional cap.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

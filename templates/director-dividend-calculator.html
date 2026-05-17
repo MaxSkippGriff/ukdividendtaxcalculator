@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="badge">Calculator</div>
+  <h1>Director Dividend Tax Calculator 2026/27</h1>
+  <p style="color:var(--text-secondary);margin-bottom:1.25rem;">Estimate personal dividend tax for a company director taking salary plus dividends from their limited company. Enter your PAYE salary, total dividends drawn, and any other income to get an instant 2026/27 estimate.</p>
+
+  <div class="calc-widget">
+    <div class="calc-widget-header">
+      <h2>Director Dividend Tax</h2>
+      <span class="calc-year-badge">2026/27</span>
+    </div>
+    <div class="calc-widget-body">
+      <div class="calc-grid-2">
+        <div class="field">
+          <label>Salary / PAYE income</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="salary" value="12570" min="0" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <label>Total dividends drawn</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="dividends" value="40000" min="0" oninput="calculate()">
+          </div>
+        </div>
+        <div class="field">
+          <label>Other income e.g. rental</label>
+          <div class="currency-input">
+            <span class="currency-symbol">£</span>
+            <input type="number" id="other_income" value="0" min="0" oninput="calculate()">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-widget-results">
+      <div class="results-row"><span class="results-label">PA remaining for dividends</span><span class="results-value">£<span id="r_pa_remaining">0</span></span></div>
+      <div class="results-row"><span class="results-label">Dividend allowance used</span><span class="results-value">£<span id="r_allowance">0</span></span></div>
+      <div class="results-row"><span class="results-label">Taxable dividends</span><span class="results-value">£<span id="r_taxable">0</span></span></div>
+      <div class="results-row"><span class="results-label">Tax at 10.75% (basic)</span><span class="results-value">£<span id="r_basic">0</span></span></div>
+      <div class="results-row"><span class="results-label">Tax at 35.75% (higher)</span><span class="results-value">£<span id="r_higher">0</span></span></div>
+      <div class="results-row"><span class="results-label">Tax at 39.35% (additional)</span><span class="results-value">£<span id="r_additional">0</span></span></div>
+      <div class="results-row results-total"><span class="results-label">Total dividend tax</span><span class="results-value">£<span id="r_total">0</span></span></div>
+      <div class="results-row"><span class="results-label">Net dividends after tax</span><span class="results-value">£<span id="r_net">0</span></span></div>
+      <p class="calc-disclaimer">Estimates only. Does not include PAYE income tax, National Insurance or corporation tax on company profits.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">How it works</h2>
+    <ol style="padding-left:1.25rem;line-height:1.7;color:var(--text-secondary);font-size:0.9rem;">
+      <li><strong>Personal Allowance (£12,570)</strong> — Your salary uses the Personal Allowance first. Any remainder shelters dividend income from tax.</li>
+      <li><strong>Dividend Allowance (£500)</strong> — After the Personal Allowance, the first £500 of dividends is tax-free.</li>
+      <li><strong>Band split</strong> — Dividends stack on top of non-dividend income. Salary fills the basic-rate band (up to £50,270 total income) first; dividends then fill whatever space remains.</li>
+      <li><strong>Rates applied</strong> — 10.75% on dividends in the basic-rate band, 35.75% in the higher-rate band (£50,271–£125,140), 39.35% in the additional-rate band (above £125,140).</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Worked example (defaults)</h2>
+    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">With a salary of £12,570 and dividends of £40,000: the salary uses the full Personal Allowance, leaving £0 PA for dividends. The £500 dividend allowance reduces taxable dividends to £39,500. The basic-rate band has £37,700 remaining (£50,270 − £12,570), so £37,700 is taxed at 10.75% (= £4,053) and £1,800 at 35.75% (= £644). Total dividend tax: approximately £4,696.</p>
+    <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.75rem;">Corporation tax on company profits is separate and not included here. Use <a href="https://www.limitedcompanytaxcalculator.co.uk" style="color:var(--accent);">limitedcompanytaxcalculator.co.uk</a> for a full company tax estimate.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Related guides</h2>
+    <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
+      <li><a href="/dividend-tax-for-contractors" style="color:var(--accent);">Dividend tax for contractors</a></li>
+      <li><a href="/dividend-personal-allowance" style="color:var(--accent);">How the personal allowance interacts with dividends</a></li>
+      <li><a href="/dividend-tax-higher-rate-taxpayer" style="color:var(--accent);">Dividend tax for higher-rate taxpayers</a></li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+    <ul class="faq-list">
+      <li class="faq-item">
+        <strong>Does this include corporation tax?</strong>
+        <p>No. Corporation tax is paid by the company on its profits before dividends are declared. This calculator covers only the personal dividend tax you pay as a shareholder-director. For a full company tax estimate, see <a href="https://www.limitedcompanytaxcalculator.co.uk" style="color:var(--accent);">limitedcompanytaxcalculator.co.uk</a>.</p>
+      </li>
+      <li class="faq-item">
+        <strong>Does this include PAYE income tax or National Insurance?</strong>
+        <p>No. Only dividend tax is estimated here. Your salary will also be subject to PAYE income tax and employee/employer National Insurance contributions. Use the main <a href="/" style="color:var(--accent);">UK Dividend Tax Calculator</a> alongside an income tax calculator for a fuller picture.</p>
+      </li>
+      <li class="faq-item">
+        <strong>What is the most tax-efficient salary for a director in 2026/27?</strong>
+        <p>Many directors set their salary at the Primary Threshold (£12,570 for 2026/27) to avoid employee National Insurance while preserving a full year of State Pension entitlement. Taking salary above this level triggers both employee and employer NI. This calculator shows the dividend tax impact at any salary level.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Official sources</h2>
+    <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
+      <li><a href="https://www.gov.uk/tax-on-dividends" style="color:var(--accent);" rel="noopener">HMRC: Tax on dividends</a></li>
+      <li><a href="https://www.gov.uk/income-tax-rates" style="color:var(--accent);" rel="noopener">HMRC: Income Tax rates and Personal Allowances</a></li>
+    </ul>
+  </div>
+
+  <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:1rem;">Disclaimer: Results are estimates based on 2026/27 rates. This tool does not constitute financial or tax advice. Consult a qualified accountant for your personal situation.</p>
+</section>
+
+<script>
+const PERSONAL_ALLOWANCE = 12570;
+const BASIC_RATE_LIMIT = 50270;
+const ADDITIONAL_RATE_THRESHOLD = 125140;
+const DIVIDEND_ALLOWANCE = 500;
+const DIV_BASIC = 0.1075;
+const DIV_HIGHER = 0.3575;
+const DIV_ADDITIONAL = 0.3935;
+
+function calculate() {
+  const salary = +document.getElementById('salary').value || 0;
+  const dividends = +document.getElementById('dividends').value || 0;
+  const otherIncome = +document.getElementById('other_income').value || 0;
+  const totalNonDiv = salary + otherIncome;
+
+  const paUsed = Math.min(totalNonDiv, PERSONAL_ALLOWANCE);
+  const remainingPA = Math.max(0, PERSONAL_ALLOWANCE - totalNonDiv);
+
+  const divAfterPA = Math.max(0, dividends - remainingPA);
+  const allowanceUsed = Math.min(divAfterPA, DIVIDEND_ALLOWANCE);
+  const taxableDivs = Math.max(0, divAfterPA - allowanceUsed);
+
+  const basicRemaining = Math.max(0, BASIC_RATE_LIMIT - totalNonDiv);
+  const divAtBasic = Math.min(taxableDivs, basicRemaining);
+  const rem1 = taxableDivs - divAtBasic;
+  const higherRemaining = Math.max(0, ADDITIONAL_RATE_THRESHOLD - Math.max(totalNonDiv, BASIC_RATE_LIMIT) - divAtBasic);
+  const divAtHigher = Math.min(rem1, higherRemaining);
+  const divAtAdditional = rem1 - divAtHigher;
+
+  const taxBasic = divAtBasic * DIV_BASIC;
+  const taxHigher = divAtHigher * DIV_HIGHER;
+  const taxAdditional = divAtAdditional * DIV_ADDITIONAL;
+  const totalTax = taxBasic + taxHigher + taxAdditional;
+  const netDividends = dividends - totalTax;
+
+  const fmt = n => n.toLocaleString('en-GB', {minimumFractionDigits:0,maximumFractionDigits:0});
+  document.getElementById('r_pa_remaining').textContent = fmt(remainingPA);
+  document.getElementById('r_allowance').textContent = fmt(allowanceUsed);
+  document.getElementById('r_taxable').textContent = fmt(taxableDivs);
+  document.getElementById('r_basic').textContent = fmt(taxBasic);
+  document.getElementById('r_higher').textContent = fmt(taxHigher);
+  document.getElementById('r_additional').textContent = fmt(taxAdditional);
+  document.getElementById('r_total').textContent = fmt(totalTax);
+  document.getElementById('r_net').textContent = fmt(netDividends);
+}
+window.onload = calculate;
+</script>
+{% endblock %}

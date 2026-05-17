@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I pay tax on dividends in an ISA?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends received inside a Stocks and Shares ISA are completely exempt from UK income tax. There is no dividend tax to pay on ISA dividends, regardless of the amount or your tax rate. ISA income does not need to be reported on a Self Assessment tax return."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the dividend allowance apply to ISA income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No — and this works in your favour. Dividends inside an ISA are simply ignored for UK tax purposes entirely. The £500 dividend allowance is only relevant for dividends held outside an ISA. ISA dividends do not use up your £500 allowance, and your allowance remains fully available for any dividends you hold outside an ISA."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I put unlimited amounts in an ISA to avoid dividend tax?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The ISA allowance is £20,000 per person per tax year in 2026/27. You cannot carry forward unused ISA allowance from previous years. However, the ISA allowance resets each tax year, so you can contribute up to £20,000 each year, gradually building up a larger tax-free pot."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax and ISAs 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Dividends inside an ISA are not taxed and do not use the dividend allowance. Dividends outside an ISA are subject to the £500 allowance and then taxed at 10.75%, 35.75% or 39.35% depending on your income. This guide explains how ISA dividend tax exemption works in 2026/27.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">No dividend tax inside an ISA</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Any dividend income received inside a Stocks and Shares ISA is completely exempt from UK income tax. It does not matter how large the dividends are, which rate band you sit in, or how much you receive — ISA dividends are simply not taxable.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        This exemption covers all dividend types: individual company dividends, fund distributions, REIT distributions paid as dividends, and interest distributions. Capital gains on investments held inside an ISA are also exempt from Capital Gains Tax. Neither needs to be declared on a Self Assessment tax return.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The ISA allowance: £20,000 per year</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        The annual ISA allowance for 2026/27 is £20,000 per person. This is the maximum you can contribute across all your ISAs in a single tax year. You can split it across a Cash ISA, Stocks and Shares ISA, Innovative Finance ISA or Lifetime ISA (up to £4,000 into a LISA), but the combined total cannot exceed £20,000.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Unused ISA allowance cannot be carried forward to the next tax year. The allowance resets on 6 April each year. However, existing ISA funds — including growth and dividends accumulated over previous years — remain sheltered indefinitely. There is no cap on the total ISA pot size.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How the dividend allowance interacts with ISAs</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Dividends inside an ISA are completely ignored for UK tax purposes. They do not count towards your £500 dividend allowance, and they do not push you into a higher rate band. Your £500 allowance remains fully available for dividends you hold outside an ISA.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        This is particularly valuable for investors with large dividend-paying portfolios. If you have £200,000 in dividend-paying funds inside an ISA receiving 4% yield (£8,000 in dividends), all £8,000 is tax-free. The same portfolio outside an ISA would generate significant dividend tax — especially for higher and additional-rate taxpayers.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: ISA vs outside ISA</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> £2,000 of dividends inside a Stocks and Shares ISA and £2,000 of dividends outside the ISA. Taxpayer has a salary of £30,000 (basic-rate taxpayer).
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.75rem;">
+        <li><strong>£2,000 ISA dividends</strong> — completely tax-free. No tax owed. The £500 dividend allowance is not used up by these dividends.</li>
+        <li><strong>£2,000 outside-ISA dividends</strong> — £500 dividend allowance applies. Remaining taxable dividends: £1,500.</li>
+        <li>Salary of £30,000 is in the basic-rate band. Dividends fall in the basic-rate band too.</li>
+        <li>Dividend tax: £1,500 × 10.75% = <strong>£161.25</strong>.</li>
+      </ul>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;"></th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Inside ISA</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Outside ISA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Dividend income</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£2,000</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£2,000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Dividend allowance used</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£0</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£500</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Taxable dividends</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£0</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;">£1,500</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.5rem;font-weight:600;">Dividend tax owed</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">£0</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">£161 (at 10.75%)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin-top:0.6rem;margin-bottom:0;">
+        If the same taxpayer had a salary of £55,000, dividends outside the ISA would fall in the higher-rate band at 35.75% — tax on the £1,500 would be £536.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Bed and ISA: moving investments into an ISA</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        If you hold dividend-paying investments outside an ISA, you can consider a Bed and ISA strategy: selling the investment outside the ISA and immediately repurchasing it inside an ISA. Future dividends and gains on those holdings then become tax-free.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The sale may trigger a Capital Gains Tax liability if the investment has grown — so the CGT position should be reviewed before proceeding. You can transfer up to £20,000 per year (the ISA allowance) in this way. Spouses and civil partners each have their own £20,000 ISA allowance, so a couple can shelter up to £40,000 per year in ISAs.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate tax on dividends outside your ISA</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to see how much dividend tax you would owe on investments held outside an ISA.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/individual-savings-accounts" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Individual Savings Accounts (ISAs)</a></li>
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/capital-gains-tax" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Capital Gains Tax</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I pay tax on dividends in an ISA?</summary>
+          <div class="faq-answer">No. Dividends received inside a Stocks and Shares ISA are completely exempt from UK income tax. There is no dividend tax to pay on ISA dividends regardless of the amount or your tax rate, and you do not need to declare ISA income on a Self Assessment return.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the dividend allowance apply to ISA income?</summary>
+          <div class="faq-answer">No — ISA dividends are simply ignored for tax purposes entirely. They do not use up your £500 dividend allowance. Your £500 allowance remains fully available for any dividend income you hold outside an ISA. This is an additional benefit of holding investments inside an ISA.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I put unlimited amounts in an ISA to avoid dividend tax?</summary>
+          <div class="faq-answer">No. The ISA allowance is £20,000 per person per tax year in 2026/27. You cannot carry forward unused allowance from previous years. However, the allowance resets each 6 April and existing ISA funds remain sheltered indefinitely with no upper cap on the total pot size.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

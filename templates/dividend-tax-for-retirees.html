@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do retirees pay dividend tax?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Retirees pay dividend tax on the same basis as anyone else. The first £500 of dividends is covered by the dividend allowance and is tax-free. If total income including dividends stays within the basic-rate band (£50,270), dividends above £500 are taxed at 10.75% in 2026/27. However, retirees with only the state pension and modest dividends may pay little or no dividend tax because unused Personal Allowance can shelter dividend income."}
+    },
+    {
+      "@type": "Question",
+      "name": "How does the state pension affect my dividend tax?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The state pension is non-savings income and uses up part of the Personal Allowance. The full new state pension is approximately £11,502 in 2026/27. This leaves £1,068 of Personal Allowance (£12,570 minus £11,502) available to shelter £1,068 of dividend income tax-free. The £500 dividend allowance then applies on top of that, making the first £1,568 of dividends completely tax-free."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to do self assessment as a retired investor?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You must register for Self Assessment if your dividend income exceeds £2,000 in a tax year (the threshold is £500 if you are already required to file for another reason). Many retirees who have not previously filed Self Assessment may need to register when they start drawing significant dividend income from investments. HMRC cannot collect dividend tax through PAYE or automatically."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax for Retirees 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Retirees can enjoy very tax-efficient dividend income. The state pension, Personal Allowance and dividend allowance often combine to make the first portion of dividend income completely tax-free. This guide explains how dividend tax works in retirement in 2026/27.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How dividend tax applies in retirement</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Dividend tax in retirement works the same way as for any other taxpayer. The first £500 of dividend income each year is covered by the dividend allowance and is tax-free. Dividends above that are taxed at 10.75% if total income is within the basic-rate band (up to £50,270), 35.75% in the higher-rate band, or 39.35% in the additional-rate band.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        What makes retirement potentially tax-efficient is the interaction between the state pension, the Personal Allowance, and the dividend allowance. For retirees with only the state pension and modest investment dividends, a significant portion of dividend income may be tax-free.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">State pension and the Personal Allowance</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        The full new state pension for 2026/27 is approximately £11,502 per year. Although pension income is not taxed at source via PAYE for most retirees, it counts as non-savings income and is set against the Personal Allowance of £12,570.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        After the state pension uses £11,502 of the Personal Allowance, <strong>£1,068 of Personal Allowance remains</strong> (£12,570 − £11,502 = £1,068). This remaining allowance is applied to the next type of income in the stack — dividend income (assuming no other non-savings or savings income). So the first £1,068 of dividend income is tax-free through the remaining Personal Allowance.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: state pension + dividends only</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> Full new state pension (£11,502), dividends £5,000. No private pension or other income. 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Personal Allowance: £12,570. State pension £11,502 uses £11,502 of it.</li>
+        <li>Remaining Personal Allowance: £12,570 − £11,502 = £1,068. This covers £1,068 of dividends tax-free.</li>
+        <li>Dividend allowance: next £500 of dividends is also tax-free.</li>
+        <li>Tax-free dividends: £1,068 + £500 = £1,568.</li>
+        <li>Taxable dividends: £5,000 − £1,568 = £3,432.</li>
+        <li>Total income: £11,502 + £5,000 = £16,502 — well within the basic-rate band.</li>
+        <li>Dividend tax: £3,432 × 10.75% = <strong>£369</strong>.</li>
+        <li><strong>Total dividend tax: £369.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        If the same dividends were held inside an ISA, dividend tax would be £0. The combination of ISA shelter and careful income management is especially powerful in retirement.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Private pension income reduces the available allowance</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        If you also draw a private pension, that income further reduces or eliminates the Personal Allowance available for dividends. For example, if your state pension is £11,502 and your private pension is £5,000, your total non-savings income is £16,502 — which already exceeds the £12,570 Personal Allowance. No Personal Allowance remains for dividends.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        In this scenario, only the £500 dividend allowance applies. Dividends above £500 are taxed at 10.75% (assuming total income stays below £50,270).
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">ISAs are especially valuable for retirees</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Holding dividend-paying investments inside a Stocks and Shares ISA is one of the most tax-efficient strategies available to retirees. ISA dividends are completely exempt from income tax regardless of the amount or rate band. They do not use up the dividend allowance, and they do not push income into higher tax bands.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        For retirees managing income in retirement, keeping investment income inside ISAs and drawing on ISA funds first can significantly reduce the overall tax bill. Capital gains inside an ISA are also exempt from Capital Gains Tax.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Self Assessment for retirees with dividends</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Many retirees may not have previously needed to complete a Self Assessment tax return. However, if your dividend income (outside an ISA) exceeds £2,000 in a tax year, you must register for Self Assessment and declare it. HMRC cannot collect dividend tax through PAYE or automatically.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        If you are already registered for Self Assessment for another reason, the threshold for needing to declare dividend income is lower — £500. It is worth registering proactively if you expect your dividend income to grow, as penalties apply for late registration. The deadline to register for the 2026/27 tax year is 5 October 2027.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate your dividend tax in retirement</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your pension income as your salary figure and your investment dividends to estimate your dividend tax for 2026/27.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/new-state-pension" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — The new State Pension</a></li>
+        <li><a href="https://www.gov.uk/self-assessment-tax-returns/who-must-send-a-tax-return" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Who must send a Self Assessment tax return</a></li>
+        <li><a href="https://www.gov.uk/individual-savings-accounts" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Individual Savings Accounts (ISAs)</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do retirees pay dividend tax?</summary>
+          <div class="faq-answer">Yes, retirees pay dividend tax on the same basis as everyone else. The first £500 of dividends is tax-free. If total income stays within the basic-rate band, dividends above £500 are taxed at 10.75% in 2026/27. However, retirees with only the state pension may have some remaining Personal Allowance to shelter additional dividend income from tax.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How does the state pension affect my dividend tax?</summary>
+          <div class="faq-answer">The state pension counts as non-savings income and uses up part of the Personal Allowance. With the full new state pension at approximately £11,502 in 2026/27, £1,068 of Personal Allowance remains (£12,570 minus £11,502). This can shelter £1,068 of dividend income from tax. On top of that, the £500 dividend allowance provides a further £500 tax-free, giving a total of £1,568 of tax-free dividend income for someone with only the full state pension.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to do self assessment as a retired investor?</summary>
+          <div class="faq-answer">You must register for Self Assessment if your dividend income outside an ISA exceeds £2,000 in a tax year. HMRC cannot collect dividend tax automatically. If you are already registered for Self Assessment for another reason, you need to declare dividends above £500. The deadline to register for 2026/27 is 5 October 2027.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}

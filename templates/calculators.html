@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="badge">Calculators</div>
+  <h1>Dividend Tax Calculators 2026/27</h1>
+  <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Free UK dividend tax calculators for directors, investors and basic/higher rate taxpayers. All reflect 2026/27 rates and the £500 dividend allowance.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.75rem;">
+    <a href="/" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none;">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;">Calculator</div>
+      <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">UK Dividend Tax Calculator</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">Calculate your dividend tax bill by entering salary, dividends and income region.</div>
+    </a>
+    <a href="/director-dividend-calculator" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none;">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;">Calculator</div>
+      <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Director Dividend Calculator</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">Estimate personal dividend tax for a company director after taking a salary.</div>
+    </a>
+    <a href="/dividend-after-salary-calculator" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none;">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;">Calculator</div>
+      <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Dividend After Salary Calculator</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">See how your salary uses tax bands before dividends are taxed.</div>
+    </a>
+    <a href="/investment-dividend-tax-calculator" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none;">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;">Calculator</div>
+      <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Investment Dividend Tax Calculator</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">Estimate tax on investment dividends outside ISAs and pensions.</div>
+    </a>
+    <a href="/dividend-allowance-calculator" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.25rem;text-decoration:none;">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;">Calculator</div>
+      <div style="font-size:0.95rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Dividend Allowance Calculator</div>
+      <div style="font-size:0.82rem;color:var(--text-secondary);">See how the £500 dividend allowance applies after your other income.</div>
+    </a>
+  </div>
+</section>
+{% endblock %}

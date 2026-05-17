@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the 35.75% dividend rate applied to all dividends for higher-rate taxpayers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. The 35.75% rate applies only to the portion of dividend income that falls within the higher-rate band (income between £50,271 and £125,140). If some of your dividends fall within the basic-rate band, those are taxed at 10.75%. After the £500 dividend allowance, dividends are taxed at the rate of the band they fall into."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the additional rate for dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The additional-rate dividend tax rate is 39.35% for 2026/27. This applies to dividend income above the additional-rate threshold of £125,140. If your total income (including dividends) exceeds £125,140, dividends above that threshold are taxed at 39.35%."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can pension contributions reduce dividend tax for higher-rate taxpayers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Making pension contributions reduces your total adjusted net income, which can shift dividends back into a lower tax band. For example, if your income is £55,000 and you make a £5,000 gross pension contribution, your adjusted net income falls to £50,000, potentially keeping more dividends in the basic-rate band at 10.75% rather than 35.75%. Pension contributions can also help protect or restore your Personal Allowance if income is above £100,000."}
+    },
+    {
+      "@type": "Question",
+      "name": "How does the Personal Allowance taper affect higher-rate taxpayers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For incomes above £100,000, the Personal Allowance (£12,570) is reduced by £1 for every £2 of income above £100,000. It reaches zero at £125,140. Losing the Personal Allowance creates an effective marginal rate significantly higher than the headline dividend rate in that £100,000–£125,140 range. Pension contributions can help reduce adjusted net income back below £100,000 and restore the full Personal Allowance."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the £500 dividend allowance still apply to higher-rate taxpayers?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The £500 dividend allowance applies to all UK taxpayers regardless of tax band. Higher-rate and additional-rate taxpayers also benefit from the first £500 of dividends being tax-free each year."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax for Higher-Rate Taxpayers 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    If your total income exceeds £50,270, dividends above the £500 allowance that fall in the higher-rate band are taxed at 35.75%. This guide explains how that works, with a worked example and tips on how salary and pension contributions interact with your dividend tax.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
+
+  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How higher-rate dividend tax is triggered</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Dividends are treated as the top slice of income. Your salary, rental income, and other non-dividend income fills the Personal Allowance (£12,570) and the basic-rate band first. Dividends then sit on top of that.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        If your salary alone already exceeds the basic-rate limit of £50,270, then any taxable dividends above the £500 allowance will immediately fall into the higher-rate band and be taxed at 35.75%. You don't need to have a very large dividend to face the higher rate — a salary above £50,270 is enough to push all dividends into the higher band.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Band</th>
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Total income range</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Dividend rate</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Basic rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Up to £50,270</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">10.75%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:0.4rem 0.5rem;">Higher rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">£50,271 – £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">35.75%</td>
+          </tr>
+          <tr>
+            <td style="padding:0.4rem 0.5rem;">Additional rate</td>
+            <td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Above £125,140</td>
+            <td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        The first £500 of dividend income each tax year is covered by the dividend allowance — this applies to all taxpayers, including higher-rate and additional-rate taxpayers.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> An employee earns a salary of £55,000 and receives £10,000 in dividends outside an ISA in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £55,000 — exceeds the basic-rate limit of £50,270 by £4,730. Higher-rate income tax already applies on the salary above £50,270.</li>
+        <li>Dividends of £10,000 sit on top of the salary — entirely in the higher-rate band.</li>
+        <li>First £500: dividend allowance — <strong>£0 tax</strong>.</li>
+        <li>Remaining £9,500 at 35.75% = <strong>£3,396</strong>.</li>
+        <li><strong>Total dividend tax: approximately £3,396.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
+        If those dividends were inside a Stocks and Shares ISA, the dividend tax would be £0.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The additional-rate risk above £125,140</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        If your total income (salary plus dividends plus any other income) exceeds £125,140, dividends in that band are taxed at the additional rate of <strong>39.35%</strong>. This is the highest dividend tax rate.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Between £100,000 and £125,140, there is also a Personal Allowance taper: the £12,570 Personal Allowance is reduced by £1 for every £2 of income above £100,000, creating a very high effective marginal rate in that range. Pension contributions that reduce adjusted net income back below £100,000 can restore the full Personal Allowance and significantly reduce the total tax bill.
+      </p>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How pension contributions can help</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Making pension contributions reduces your adjusted net income. This can shift dividends from the higher-rate band back into the basic-rate band. For example:
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li>Total income of £55,000 with £5,000 gross pension contribution → adjusted income of £50,000.</li>
+        <li>Dividends may now fall back into the basic-rate band (10.75% rather than 35.75%).</li>
+        <li>Pension contributions also attract income tax relief, adding a further benefit.</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a full breakdown showing which band your dividends fall into.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
+    </div>
+
+    <div class="card" style="padding:1.1rem 1.2rem;">
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
+        <li><a href="https://www.gov.uk/income-tax-rates" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Income tax rates and Personal Allowances</a></li>
+        <li><a href="https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Changes to tax rates for dividend income</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is the 35.75% rate applied to all my dividends?</summary>
+          <div class="faq-answer">Not necessarily. The 35.75% rate applies only to dividends that fall within the higher-rate band (income above £50,270). If some dividends fall within the basic-rate band, those are taxed at 10.75%. The rate depends on where each pound of dividend income lands after salary and other income has filled the lower bands.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the additional rate for dividends?</summary>
+          <div class="faq-answer">The additional-rate dividend tax rate is 39.35% for 2026/27. This applies to dividend income above the additional-rate threshold of £125,140 total income.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can pension contributions reduce dividend tax?</summary>
+          <div class="faq-answer">Yes. Pension contributions reduce your adjusted net income, which can shift dividends from the higher-rate band into the basic-rate band. This saves 25 percentage points of dividend tax on those amounts (35.75% vs 10.75%). Contributions also attract income tax relief and can restore the Personal Allowance if income is above £100,000.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How does the Personal Allowance taper affect me?</summary>
+          <div class="faq-answer">If your total income is above £100,000, the Personal Allowance (£12,570) is reduced by £1 for every £2 of income above £100,000. It reaches zero at £125,140. Losing the Personal Allowance creates a high effective marginal rate in that range. Pension contributions that bring adjusted income below £100,000 can restore the full allowance.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the £500 dividend allowance apply to higher-rate taxpayers?</summary>
+          <div class="faq-answer">Yes. The £500 dividend allowance applies to all UK taxpayers, regardless of tax band. Even higher-rate and additional-rate taxpayers pay no dividend tax on their first £500 of dividend income each year.</div>
+        </details>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
+    </p>
+
+  </div>
+</section>
+{% endblock %}
