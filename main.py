@@ -114,6 +114,16 @@ def robots():
     r.content_type = "text/plain"
     return r
 
+
+@app.route("/ads.txt")
+def ads_txt():
+    pub_id = ADSENSE_CLIENT.replace("ca-pub-", "").strip()
+    body = f"google.com, pub-{pub_id}, DIRECT, f08c47fec0942fa0\n" if pub_id else ""
+    resp = make_response(body)
+    resp.mimetype = "text/plain"
+    return resp
+
+
 @app.route("/sitemap.xml")
 def sitemap():
     now = datetime.utcnow().strftime("%Y-%m-%d")
@@ -155,7 +165,7 @@ def landing():
     calc = calculate_dividend_tax(salary_income=40000, dividend_income=10000)
     faq = [
         {"q":"What is the dividend allowance for 2026/27?","a":"The dividend allowance is £500 for 2026/27. Dividends within this amount are free from dividend tax, regardless of which tax band you are in. This £500 sits on top of your Personal Allowance."},
-        {"q":"What are the dividend tax rates for 2026/27?","a":"The dividend tax rates for 2026/27 are 10.75% in the basic-rate band (income up to £50,270), 35.75% in the higher-rate band (£50,271–£125,140), and 39.35% in the additional-rate band (above £125,140). These rates have applied since April 2023."},
+        {"q":"What are the dividend tax rates for 2026/27?","a":"The dividend tax rates for 2026/27 are 8.75% in the basic-rate band (income up to £50,270), 33.75% in the higher-rate band (£50,271–£125,140), and 39.35% in the additional-rate band (above £125,140)."},
         {"q":"Are dividends from ISAs taxed?","a":"No. Dividends received within a Stocks and Shares ISA are completely free from UK income tax and dividend tax. Only dividends paid outside an ISA count towards your dividend allowance and are subject to dividend tax."},
         {"q":"Why does my salary affect my dividend tax rate?","a":"Dividends are treated as the top slice of your income. Your salary and other non-dividend income fill the Personal Allowance and the basic-rate band first. Dividends then sit on top, so a higher salary pushes more dividends into higher tax bands. This is why the calculator asks for your salary."},
         {"q":"Do I need to complete a Self Assessment for dividend income?","a":"You must register for Self Assessment if your dividend income exceeds £1,000 in a tax year (or £500 if you are already required to file). HMRC cannot automatically collect dividend tax through PAYE, so you must declare it yourself."},
@@ -264,7 +274,7 @@ def guide_isa():
 def guide_higher_rate():
     return render_template("dividend-tax-higher-rate-taxpayer.html", **_ctx(
         title="Dividend Tax for Higher-Rate Taxpayers 2026/27",
-        meta_description="Learn how dividend tax works for higher-rate taxpayers in 2026/27, including the £500 dividend allowance and 35.75% rate.",
+        meta_description="Learn how dividend tax works for higher-rate taxpayers in 2026/27, including the £500 dividend allowance and 33.75% rate.",
         canonical_url=SITE_URL+"/dividend-tax-higher-rate-taxpayer",
         breadcrumbs=[{"name":"Home","url":SITE_URL+"/"},{"name":"Dividend Tax for Higher-Rate Taxpayers","url":SITE_URL+"/dividend-tax-higher-rate-taxpayer"}],
     ))
