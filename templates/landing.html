@@ -212,10 +212,10 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
 .calc-link-tag{display:inline-block;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent);background:var(--accent-light);padding:0.18rem 0.55rem;border-radius:100px;border:1px solid rgba(27,107,74,0.15);}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"UKDividendTaxCalculator.co.uk","url":"{{ site_url }}","description":"Free UK dividend tax calculator for {{ tax_year }}. Estimate dividend tax at 10.75%, 35.75% or 39.35% after the £500 allowance.","inLanguage":"en-GB"}
+{"@context":"https://schema.org","@type":"WebSite","name":"UKDividendTaxCalculator.co.uk","url":"{{ site_url }}","description":"Free UK dividend tax calculator for {{ tax_year }}. Estimate dividend tax at 8.75%, 33.75% or 39.35% after the £500 allowance.","inLanguage":"en-GB"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"UK Dividend Tax Calculator {{ tax_year }}","url":"{{ site_url }}/","description":"Free UK dividend tax calculator. Enter salary and dividend income to estimate tax at 10.75%, 35.75% or 39.35% for {{ tax_year }}.","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"en-GB","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"UKDividendTaxCalculator.co.uk","url":"{{ site_url }}"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"UK Dividend Tax Calculator {{ tax_year }}","url":"{{ site_url }}/","description":"Free UK dividend tax calculator. Enter salary and dividend income to estimate tax at 8.75%, 33.75% or 39.35% for {{ tax_year }}.","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"en-GB","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"provider":{"@type":"Organization","name":"UKDividendTaxCalculator.co.uk","url":"{{ site_url }}"}}
 </script>
 {% if faq_items %}
 <script type="application/ld+json">
@@ -257,8 +257,8 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
   </div>
   <div class="hero-stats">
     <span class="hero-stat"><strong>£500</strong> dividend allowance</span>
-    <span class="hero-stat"><strong>10.75%</strong> basic rate</span>
-    <span class="hero-stat"><strong>35.75%</strong> higher rate</span>
+    <span class="hero-stat"><strong>8.75%</strong> basic rate</span>
+    <span class="hero-stat"><strong>33.75%</strong> higher rate</span>
     <span class="hero-stat"><strong>39.35%</strong> additional rate</span>
     <span class="hero-stat">Updated April 2026</span>
     <span class="hero-stat">Free to use</span>
@@ -348,12 +348,12 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
             </div>
             <div class="legend-row">
               <span class="legend-dot" style="background:#D4763C"></span>
-              <span class="legend-name">At 10.75% basic</span>
+              <span class="legend-name">At 8.75% basic</span>
               <span class="legend-val" id="lBasic">£{{ "{:,.0f}".format(calc.dividends_at_basic) }}</span>
             </div>
             <div class="legend-row">
               <span class="legend-dot" style="background:#5B8DB8"></span>
-              <span class="legend-name">At 35.75% higher</span>
+              <span class="legend-name">At 33.75% higher</span>
               <span class="legend-val" id="lHigher">£{{ "{:,.0f}".format(calc.dividends_at_higher) }}</span>
             </div>
             <div class="legend-row">
@@ -388,8 +388,8 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
         <table class="breakdown-table">
           <thead><tr><th>Item</th><th>Amount</th></tr></thead>
           <tbody>
-            <tr><td>Tax at 10.75%</td><td id="bdTaxBasic">£{{ "{:,.0f}".format(calc.tax_at_basic) }}</td></tr>
-            <tr><td>Tax at 35.75%</td><td id="bdTaxHigher">£{{ "{:,.0f}".format(calc.tax_at_higher) }}</td></tr>
+            <tr><td>Tax at 8.75%</td><td id="bdTaxBasic">£{{ "{:,.0f}".format(calc.tax_at_basic) }}</td></tr>
+            <tr><td>Tax at 33.75%</td><td id="bdTaxHigher">£{{ "{:,.0f}".format(calc.tax_at_higher) }}</td></tr>
             <tr><td>Tax at 39.35%</td><td id="bdTaxAdd">£{{ "{:,.0f}".format(calc.tax_at_additional) }}</td></tr>
             <tr><td><strong>Total dividend tax</strong></td><td id="bdTotalTax"><strong>£{{ "{:,.0f}".format(calc.total_dividend_tax) }}</strong></td></tr>
             <tr><td>Net dividend income</td><td id="bdNetDiv">£{{ "{:,.0f}".format(calc.net_dividend_income) }}</td></tr>
@@ -397,7 +397,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
         </table>
       </details>
       <div class="assumptions" id="assumptionsBlock">
-        Tax year {{ tax_year }} · Dividend allowance £500 · Basic rate 10.75% · Higher rate 35.75% · Additional rate 39.35% · Personal Allowance £12,570 · Estimates only — not financial or tax advice.
+        Tax year {{ tax_year }} · Dividend allowance £500 · Basic rate 8.75% · Higher rate 33.75% · Additional rate 39.35% · Personal Allowance £12,570 · Estimates only — not financial or tax advice.
       </div>
     </div>
   </div>
@@ -420,7 +420,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
     <div class="card" style="padding:0.95rem 1rem;">
       <div style="font-family:var(--font-display);font-size:1.35rem;color:var(--accent);line-height:1;margin-bottom:0.35rem;">03</div>
       <h3 style="font-size:0.92rem;margin-bottom:0.15rem;">See tax at each band</h3>
-      <p style="font-size:0.82rem;line-height:1.55;color:var(--text-secondary);">Review dividend tax at 10.75%, 35.75% and 39.35%, the £500 allowance used, net dividend income after tax, and effective dividend tax rate.</p>
+      <p style="font-size:0.82rem;line-height:1.55;color:var(--text-secondary);">Review dividend tax at 8.75%, 33.75% and 39.35%, the £500 allowance used, net dividend income after tax, and effective dividend tax rate.</p>
     </div>
   </div>
   <style>@media(max-width:640px){.div-steps{grid-template-columns:1fr!important;}}</style>
@@ -434,10 +434,10 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
       The salary of £40,000 uses most of the Personal Allowance and basic-rate band. Taxable salary: £40,000 − £12,570 = £27,430. This uses £27,430 of the £37,700 basic-rate band, leaving £10,270 unused.
     </p>
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
-      After the £500 dividend allowance, taxable dividends are <strong>£9,500</strong>. All £9,500 falls within the remaining £10,270 of the basic-rate band. Dividend tax = 10.75% × £9,500 = approximately <strong>£1,021</strong>.
+      After the £500 dividend allowance, taxable dividends are <strong>£9,500</strong>. All £9,500 falls within the remaining £10,270 of the basic-rate band. Dividend tax = 8.75% × £9,500 = approximately <strong>£1,021</strong>.
     </p>
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-      Net dividend income after tax: approximately <strong>£8,979</strong>. Effective dividend tax rate: approximately <strong>10.2%</strong>. If salary were £55,000 instead, dividends would fall into the higher-rate band at 35.75%. Try adjusting the salary figure above.
+      Net dividend income after tax: approximately <strong>£8,979</strong>. Effective dividend tax rate: approximately <strong>10.2%</strong>. If salary were £55,000 instead, dividends would fall into the higher-rate band at 33.75%. Try adjusting the salary figure above.
     </p>
   </div>
 </section>
@@ -452,13 +452,13 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
       <span class="guide-arrow">→</span>
       <div class="guide-topic">Basic rate</div>
       <h3>Dividend Tax for Basic-Rate Taxpayers 2026/27</h3>
-      <p>10.75% on dividends above the £500 allowance for income up to £50,270.</p>
+      <p>8.75% on dividends above the £500 allowance for income up to £50,270.</p>
     </a>
     <a href="/dividend-tax-higher-rate-taxpayer" class="guide-card">
       <span class="guide-arrow">→</span>
       <div class="guide-topic">Higher rate</div>
       <h3>Dividend Tax for Higher-Rate Taxpayers 2026/27</h3>
-      <p>35.75% on dividends in the higher-rate band (£50,271–£125,140).</p>
+      <p>33.75% on dividends in the higher-rate band (£50,271–£125,140).</p>
     </a>
     <a href="/dividend-tax-additional-rate-taxpayer" class="guide-card">
       <span class="guide-arrow">→</span>
@@ -513,7 +513,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
   <div class="calc-cards-grid">
     <a href="/" class="calc-link-card">
       <h3>UK Dividend Tax Calculator</h3>
-      <p>Estimate dividend tax at 10.75%, 35.75% or 39.35% after the £500 allowance and Personal Allowance.</p>
+      <p>Estimate dividend tax at 8.75%, 33.75% or 39.35% after the £500 allowance and Personal Allowance.</p>
       <span class="calc-link-tag">Main calculator</span>
     </a>
     <a href="/director-dividend-calculator" class="calc-link-card">
@@ -588,7 +588,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
   <h2>How we calculate dividend tax</h2>
   <div class="card" style="padding:1.1rem 1.2rem; margin-top:0.9rem;">
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
-      Salary and other non-dividend income fills the Personal Allowance first, then the basic-rate band. Dividends sit on top. After the £500 dividend allowance, taxable dividends are split across the remaining basic-rate band (10.75%), higher-rate band (35.75%) and additional-rate band (39.35%). The Personal Allowance tapers to zero above £125,140 of total income.
+      Salary and other non-dividend income fills the Personal Allowance first, then the basic-rate band. Dividends sit on top. After the £500 dividend allowance, taxable dividends are split across the remaining basic-rate band (8.75%), higher-rate band (33.75%) and additional-rate band (39.35%). The Personal Allowance tapers to zero above £125,140 of total income.
     </p>
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
       This calculator does not cover corporation tax on company profits, ISA dividends (which are tax-free), Scotland-specific income tax rates (dividend rates are the same UK-wide), or trust income.
@@ -728,7 +728,7 @@ function calculate(){
   setText('bdTaxBasic',fmt(taxBasic));setText('bdTaxHigher',fmt(taxHigher));setText('bdTaxAdd',fmt(taxAdd));
   setText('bdTotalTax',fmt(totalTax));setText('bdNetDiv',fmt(netDiv));
   const a=document.getElementById('assumptionsBlock');
-  if(a)a.textContent='Tax year {{ tax_year }} · Dividend allowance £500 · Basic rate 10.75% · Higher rate 35.75% · Additional rate 39.35% · Personal Allowance £12,570 · Salary £'+Math.round(salary).toLocaleString('en-GB')+' · Estimates only — not advice.';
+  if(a)a.textContent='Tax year {{ tax_year }} · Dividend allowance £500 · Basic rate 8.75% · Higher rate 33.75% · Additional rate 39.35% · Personal Allowance £12,570 · Salary £'+Math.round(salary).toLocaleString('en-GB')+' · Estimates only — not advice.';
   setText('srTax',fmt(totalTax));setText('srNet',fmt(netDiv));
 }
 ['salary','dividendIncome','pensionContribs'].forEach(id=>{

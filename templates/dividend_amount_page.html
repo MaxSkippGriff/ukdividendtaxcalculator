@@ -54,8 +54,8 @@
       </div>
       <div style="font-size:0.8rem;color:var(--text-secondary);">
         {% if calc_basic.dividends_at_basic > 0 %}
-        £{{ "{:,.0f}".format(calc_basic.dividends_at_basic) }} at 10.75% basic rate
-        {% if calc_basic.dividends_at_higher > 0 %} · £{{ "{:,.0f}".format(calc_basic.dividends_at_higher) }} at 35.75% higher rate{% endif %}
+        £{{ "{:,.0f}".format(calc_basic.dividends_at_basic) }} at 8.75% basic rate
+        {% if calc_basic.dividends_at_higher > 0 %} · £{{ "{:,.0f}".format(calc_basic.dividends_at_higher) }} at 33.75% higher rate{% endif %}
         {% elif calc_basic.taxable_dividends == 0 %}
         All dividends covered by Personal Allowance + dividend allowance — no dividend tax due.
         {% endif %}
@@ -90,11 +90,11 @@
       </div>
       <div style="font-size:0.8rem;color:var(--text-secondary);">
         {% if calc_higher.dividends_at_higher > 0 %}
-        £{{ "{:,.0f}".format(calc_higher.dividends_at_higher) }} at 35.75% higher rate
-        {% if calc_higher.dividends_at_basic > 0 %} · £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 10.75% basic rate{% endif %}
+        £{{ "{:,.0f}".format(calc_higher.dividends_at_higher) }} at 33.75% higher rate
+        {% if calc_higher.dividends_at_basic > 0 %} · £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 8.75% basic rate{% endif %}
         {% if calc_higher.dividends_at_additional > 0 %} · £{{ "{:,.0f}".format(calc_higher.dividends_at_additional) }} at 39.35% additional rate{% endif %}
         {% elif calc_higher.dividends_at_basic > 0 %}
-        £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 10.75% basic rate
+        £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 8.75% basic rate
         {% endif %}
       </div>
       <div style="margin-top:0.5rem;font-size:0.78rem;color:var(--text-tertiary);">
@@ -117,10 +117,10 @@
       <strong>Step 2 — Subtract the £500 dividend allowance.</strong> The first £500 of dividends above the PA is tax-free. After that, £{{ "{:,.0f}".format([amount - 500, 0]|max) }} is taxable (assuming salary fully uses the PA).
     </p>
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
-      <strong>Step 3 — Dividends sit on top of salary.</strong> Your salary fills the basic-rate band (up to £50,270) first. A £30,000 salary leaves £20,270 of the basic-rate band for dividends — so most or all of £{{ "{:,}".format(amount) }} are taxed at 10.75%. A £55,000 salary exceeds the basic-rate limit, so dividends fall straight into the higher-rate band at 35.75%.
+      <strong>Step 3 — Dividends sit on top of salary.</strong> Your salary fills the basic-rate band (up to £50,270) first. A £30,000 salary leaves £20,270 of the basic-rate band for dividends — so most or all of £{{ "{:,}".format(amount) }} are taxed at 8.75%. A £55,000 salary exceeds the basic-rate limit, so dividends fall straight into the higher-rate band at 33.75%.
     </p>
     <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-      <strong>2026/27 rates:</strong> 10.75% basic · 35.75% higher · 39.35% additional · £500 dividend allowance · Personal Allowance £12,570.
+      <strong>2026/27 rates:</strong> 8.75% basic · 33.75% higher · 39.35% additional · £500 dividend allowance · Personal Allowance £12,570.
     </p>
   </div>
 </div>

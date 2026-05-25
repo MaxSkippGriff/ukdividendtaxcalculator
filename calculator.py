@@ -23,8 +23,8 @@ DIVIDEND_ALLOWANCE = 500
 
 # Dividend tax rates 2026/27
 # Source: https://www.gov.uk/tax-on-dividends
-DIVIDEND_BASIC_RATE = 0.1075    # 10.75% — 2026/27 basic-rate dividend tax
-DIVIDEND_HIGHER_RATE = 0.3575   # 35.75% — 2026/27 higher-rate dividend tax
+DIVIDEND_BASIC_RATE = 0.0875    # 8.75% — 2026/27 basic-rate dividend tax
+DIVIDEND_HIGHER_RATE = 0.3375   # 33.75% — 2026/27 higher-rate dividend tax
 DIVIDEND_ADDITIONAL_RATE = 0.3935  # 39.35% — 2026/27 additional-rate dividend tax
 
 
