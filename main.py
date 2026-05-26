@@ -387,7 +387,7 @@ def dividend_allowance_calculator():
         breadcrumbs=[{"name":"Home","url":SITE_URL+"/"},{"name":"Dividend Allowance Calculator","url":SITE_URL+"/dividend-allowance-calculator"}],
     ))
 
-DIVIDEND_AMOUNTS = [1000, 2000, 3000, 5000, 7500, 10000, 15000, 20000, 25000, 30000, 40000, 50000]
+DIVIDEND_AMOUNTS = [1000, 2000, 3000, 5000, 7500, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 100000]
 
 @app.route("/dividend-tax/<int:amount>")
 def dividend_amount_page(amount: int):
@@ -411,6 +411,220 @@ def dividend_amount_page(amount: int):
 
 
 BLOG_POSTS = [
+    {
+        "slug": "dividend-tax-rates-2026-27",
+        "title": "Dividend Tax Rates 2026/27 — All Three Bands Explained",
+        "description": "The three dividend tax rates for 2026/27, how the £500 dividend allowance works, why your salary determines which rate applies to your dividends, and when you need to file Self Assessment.",
+        "date_iso": "2026-05-26",
+        "date": "May 2026",
+        "reading_time": "7 min read",
+        "sections": [
+            {
+                "heading": "The Three Dividend Tax Rates",
+                "paragraphs": [
+                    "Dividend income is taxed at rates that are distinct from income tax rates on salary. For 2026/27 the rates are: 8.75% on dividends within the basic-rate band (total income up to £50,270), 33.75% on dividends in the higher-rate band (£50,271 to £125,140), and 39.35% on dividends in the additional-rate band (above £125,140). These rates have applied since April 2022 when the 1.25 percentage point increase was made permanent following the reversal of the Health and Social Care Levy for other taxes.",
+                    "These are not the same as income tax rates. You do not pay 20% basic rate on dividends — you pay 8.75%. You do not pay 40% higher rate — you pay 33.75%. The lower rates exist because dividends are paid from company profits that have already been subject to corporation tax. The government regards this as partial economic double taxation, hence the preferential rates. But 33.75% and 39.35% are still meaningful rates, particularly for those whose dividend income falls in the higher or additional-rate bands.",
+                ],
+            },
+            {
+                "heading": "The £500 Dividend Allowance",
+                "paragraphs": [
+                    "Every UK taxpayer receives a dividend allowance of £500 for 2026/27. The first £500 of dividend income each year is free from dividend tax. This applies regardless of which income tax band you are in — a basic-rate taxpayer and an additional-rate taxpayer both receive the same £500 allowance. The allowance was reduced to £500 from April 2024, down from £1,000 the previous year and £2,000 before that.",
+                    "The allowance cannot be carried forward to the next tax year and cannot be shared with a spouse. It occupies a slot within your income bands rather than being a deduction — this means it uses up some of your basic-rate or higher-rate band, which affects how much of your other income falls into each band. For most investors this distinction is not material, but it matters for complex income structures.",
+                ],
+            },
+            {
+                "heading": "How Dividends Sit on Top of Other Income — The Stacking Rule",
+                "paragraphs": [
+                    "Dividends are always treated as the top slice of your total income. Your salary, pension and other non-dividend income fills the personal allowance (£12,570) and then the basic-rate band first. Dividends are then assessed on whatever band they fall into after all that other income has been allocated. This is sometimes called the stacking rule.",
+                    "The practical consequence is that the dividend tax rate you pay depends heavily on how much salary and other income you have. A person with no other income and £30,000 of dividends pays only 8.75% on most of it (after the personal allowance and the £500 allowance). A person with a £45,000 salary and £10,000 of dividends finds that most of those dividends land in the higher-rate band at 33.75%, because the salary has used up most of the basic-rate band. Same dividends, very different tax bill. This is why the calculator asks for your salary or other income before calculating dividend tax.",
+                ],
+            },
+            {
+                "heading": "Self Assessment Requirement",
+                "paragraphs": [
+                    "Dividend tax cannot be collected through PAYE. If your dividend income exceeds £500 in a tax year, you must report it through Self Assessment. This means registering for Self Assessment with HMRC (if you are not already registered), filing a tax return by 31 January following the end of the tax year, and paying any tax due by the same deadline. Tax returns for 2026/27 must be filed and paid by 31 January 2028.",
+                    "The £500 threshold means even small investors who receive just over £500 in dividends from a general investment account need to file a return. Dividends inside ISAs are completely exempt and do not count towards the £500 threshold — they need not be declared at all. If you already file a Self Assessment return for another reason (self-employment, rental income, salary above £100,000), you simply add your dividend income to the existing return.",
+                ],
+            },
+        ],
+        "faqs": [
+            {"q": "What are the dividend tax rates for 2026/27?", "a": "8.75% basic rate, 33.75% higher rate, 39.35% additional rate. These apply after the £500 dividend allowance."},
+            {"q": "Do I pay dividend tax if my dividends are under £500?", "a": "No. The £500 dividend allowance means the first £500 of dividends each year is free from dividend tax. You still need to file Self Assessment if your dividends exceed £500."},
+            {"q": "Why does my salary affect my dividend tax rate?", "a": "Dividends sit on top of other income. Your salary fills the basic-rate band first, so the more salary you have, the higher up the bands your dividends land — and the higher the dividend tax rate."},
+        ],
+    },
+    {
+        "slug": "dividend-tax-directors-guide",
+        "title": "Dividend Tax for Company Directors — Salary Plus Dividends",
+        "description": "How company directors structure salary and dividends for tax efficiency in 2026/27, the NI saving, the effective tax rate at different income levels, and when the structure stops being optimal.",
+        "date_iso": "2026-05-26",
+        "date": "May 2026",
+        "reading_time": "8 min read",
+        "sections": [
+            {
+                "heading": "The Typical Director Structure",
+                "paragraphs": [
+                    "Most sole-director limited company owners take a low salary — typically around £5,000 to £12,570 — and draw the remainder of their income as dividends from post-corporation-tax profits. This structure exists for two reasons: first, dividends are not subject to National Insurance (either employee or employer), whereas salary attracts employee NI at 8% (up to £50,270) and employer NI at 15%; second, dividend tax rates are lower than income tax rates on salary at the same income level.",
+                    "A salary of £9,100 (just above the NI lower earnings limit, qualifying for a State Pension credit year) means the company pays no employer NI and the director pays no employee NI on the salary. A salary of £12,570 (the personal allowance) eliminates income tax on the salary but does attract employer NI on the portion above the secondary threshold of approximately £5,000. Whether £9,100 or £12,570 is optimal depends on the corporation tax rate and whether the employer NI cost is worthwhile for the additional personal allowance saving.",
+                ],
+            },
+            {
+                "heading": "Calculating the Effective Rate — Worked Example",
+                "paragraphs": [
+                    "Consider a director with a £9,100 salary and £50,000 in dividends, total income £59,100. Income tax on salary: the £9,100 salary is entirely within the personal allowance (£12,570), so nil income tax on salary. Employee NI on salary: nil (below the primary threshold). Employer NI: nil (below the secondary threshold of approximately £5,000 — actually £9,100 is slightly above £5,000, so employer NI applies on the excess of approximately £4,100 at 15% = £615 paid by the company).",
+                    "On the £50,000 of dividends: personal allowance is £12,570, of which £9,100 is used by salary, leaving £3,470 of personal allowance available for dividends. The first £3,470 of dividends is sheltered by the remaining personal allowance (nil tax). The next £500 is the dividend allowance (nil tax). Dividends now assessed: £50,000 − £3,470 − £500 = £46,030. The remaining basic-rate band is £50,270 − £9,100 = £41,170. Of the £46,030 taxable dividends, £41,170 falls in the basic-rate band at 8.75% = £3,602; the remaining £4,860 falls into the higher-rate band at 33.75% = £1,640. Total dividend tax: approximately £5,242. The director's effective personal tax rate on £59,100 total income is approximately 8.9%.",
+                ],
+            },
+            {
+                "heading": "The Dividend Allowance Within the Structure",
+                "paragraphs": [
+                    "The £500 dividend allowance is factored into the calculation above — it sits within the basic-rate band after the personal allowance is used by salary. For a director with a low salary, the personal allowance shelters considerably more income than the dividend allowance, making the dividend allowance a relatively minor component of the overall saving. Its main value is for directors whose salary already uses the full personal allowance, where the £500 allowance provides a small additional exempt amount at the bottom of the dividend assessment.",
+                ],
+            },
+            {
+                "heading": "When the Structure Stops Being Tax-Efficient",
+                "paragraphs": [
+                    "Above total income of £50,270, dividends start attracting 33.75% — the higher-rate dividend tax. For a director taking a £9,100 salary, dividends are taxed at 8.75% up to total income of approximately £50,270, and at 33.75% above that. The structure remains more tax-efficient than equivalent salary income above £50,270 (where salary would attract 40% income tax and 2% NI), but the advantage narrows significantly.",
+                    "Above £125,140, dividends are taxed at the additional rate of 39.35%. At this point, directors with very high incomes may benefit from reviewing the corporation tax position more carefully — particularly if profits are being retained in the company rather than extracted, which can trigger complex rules around close companies. Taking large employer pension contributions directly from the company is often more efficient than dividends above the higher-rate threshold.",
+                ],
+            },
+        ],
+        "faqs": [
+            {"q": "What salary should a director take in 2026/27?", "a": "Most directors take a salary around £9,100 (no NI for either party) or £12,570 (uses full personal allowance, some employer NI). The optimal level depends on the company's corporation tax position."},
+            {"q": "Is dividend income always more tax-efficient than salary for a director?", "a": "Yes for most income levels, because dividends avoid NI entirely. However above £50,270 the advantage reduces, and above £125,140 the comparison is closer. Always model the combined personal and company tax position."},
+            {"q": "At what income does the higher-rate dividend tax kick in?", "a": "When total income (salary plus dividends) exceeds £50,270. For a director with a £9,100 salary, the higher 33.75% rate begins to apply when dividends take total income above £50,270."},
+        ],
+    },
+    {
+        "slug": "dividend-vs-cgt-comparison",
+        "title": "Dividend Tax vs Capital Gains Tax — Which Is Lower?",
+        "description": "Dividend income and capital gains are taxed differently. At basic rate the difference is small; at higher rate, CGT at 10% or 20% beats dividend tax at 33.75% by a significant margin. Here is the arithmetic.",
+        "date_iso": "2026-05-26",
+        "date": "May 2026",
+        "reading_time": "6 min read",
+        "sections": [
+            {
+                "heading": "The Fundamental Difference",
+                "paragraphs": [
+                    "Dividend income and capital gains are fundamentally different in how they arise. Dividends are income paid by a company out of profits — they are declared by the board and paid to shareholders. Capital gains arise when you sell an asset for more than you paid for it. You do not usually get to choose which type of return you receive — a company either pays dividends or it does not, and the gain on a sale is whatever the market determines.",
+                    "The distinction matters for tax because HMRC treats them entirely differently. Dividend income is subject to dividend tax rates (8.75%, 33.75%, 39.35%). Capital gains are subject to CGT rates (10%/20% for most assets, 18%/24% for residential property). In most cases, capital gains are taxed more lightly than equivalent dividend income, particularly at higher income levels.",
+                ],
+            },
+            {
+                "heading": "Where You Can Choose",
+                "paragraphs": [
+                    "There are situations where investors can influence whether their return comes as income or capital. Accumulation funds reinvest dividends internally rather than distributing them, so the investor's return accrues as capital growth rather than income. This is sometimes called 'rolling up' income — it can convert what would have been taxable dividend income into a future capital gain instead. Whether this is advantageous depends on your income level and the tax year in which you ultimately sell.",
+                    "Company directors have a genuine choice between salary and dividends (income) or retaining profits in the company for future capital growth (potentially a capital gain on sale). Pension contributions made by the company create a different outcome again. The optimal route requires modelling across multiple tax types simultaneously.",
+                ],
+            },
+            {
+                "heading": "The Arithmetic at Different Income Levels",
+                "paragraphs": [
+                    "For a basic-rate taxpayer: dividend tax is 8.75% and CGT on most assets is 10%. The difference is only 1.25 percentage points — broadly similar, and the choice between holding income-generating versus growth assets is not primarily driven by this differential. Residential property CGT is 18%, noticeably higher than dividend tax at 8.75%.",
+                    "For a higher-rate taxpayer: dividend tax is 33.75% and CGT on shares is 20%. The gap is 13.75 percentage points — a very significant difference. A £10,000 return from dividends costs £3,375 in tax; the same £10,000 from a capital gain on shares costs £2,000. This is why higher-rate taxpayers with a choice between accumulation and income funds, or between retained company profits and dividends, often prefer the capital gains route. For residential property at 24%, CGT is still below the 33.75% higher-rate dividend rate.",
+                ],
+            },
+            {
+                "heading": "ISAs and the Answer to Which Is Lower",
+                "paragraphs": [
+                    "Inside an ISA, the answer is zero for both. Dividends received from shares held in a Stocks and Shares ISA are completely free from dividend tax. Capital gains on ISA holdings are completely free from CGT. The annual ISA subscription limit for 2026/27 is £20,000 per person. For any investor with holdings inside an ISA, the comparison between dividend tax and CGT is irrelevant — both rates are zero.",
+                    "This is why long-term investors prioritise sheltering high-return investments inside ISAs. Whether those investments generate returns as dividends or capital gains, the tax treatment is identical — and identically attractive. The comparison between dividend tax and CGT only becomes relevant for the portion of a portfolio held outside an ISA.",
+                ],
+            },
+        ],
+        "faqs": [
+            {"q": "Is dividend income taxed more than capital gains?", "a": "At higher rate: yes, significantly. Dividend tax is 33.75%, CGT on shares is 20%. At basic rate: dividend tax is 8.75%, CGT is 10% — very similar. For residential property, CGT is 18%/24%, which is higher than basic-rate dividend tax."},
+            {"q": "Can I convert dividend income into capital gains?", "a": "In some cases yes — accumulation funds reinvest dividends as growth rather than paying them out, converting future income into a potential capital gain. Directors can also retain profits in the company rather than paying dividends."},
+            {"q": "Are there any UK investments where both dividend tax and CGT are zero?", "a": "Yes — investments held inside a Stocks and Shares ISA. Both dividends and capital gains are completely exempt from tax within the ISA wrapper."},
+        ],
+    },
+    {
+        "slug": "self-assessment-dividends",
+        "title": "Self Assessment for Dividend Income",
+        "description": "When you must file Self Assessment for dividends, what to include, how to handle foreign dividends and what penalties apply if you miss the deadline.",
+        "date_iso": "2026-05-26",
+        "date": "May 2026",
+        "reading_time": "6 min read",
+        "sections": [
+            {
+                "heading": "When You Must File",
+                "paragraphs": [
+                    "You must file a Self Assessment tax return if your dividend income exceeds £500 in a tax year. This threshold has applied from the 2024/25 tax year onwards — it reduced from £1,000 in 2023/24 following the cut in the dividend allowance. If your total dividends are £500 or less, no return is required for dividend income alone (though you may need to file for other reasons).",
+                    "If you are already required to file a Self Assessment return for another reason — self-employment income, rental income, salary above £100,000, a director's tax affairs — you simply add your dividend income to the existing return. You do not file separately for dividends. The requirement to file applies to each tax year independently: if your dividends exceeded £500 in 2024/25 but not in 2025/26, you file for 2024/25 but may not need to for 2025/26 (unless another trigger applies).",
+                ],
+            },
+            {
+                "heading": "What to Include on the Return",
+                "paragraphs": [
+                    "Dividend income is reported in the 'UK dividends' section of the Self Assessment return (SA100 and, if needed, SA101 supplementary pages). You enter the gross dividend amount received in the tax year. For UK dividends, the gross amount is the cash amount you received — there is no withholding tax on UK dividends, so the figure from your broker statement or dividend voucher is the gross amount.",
+                    "Older dividend vouchers (pre-April 2016) included a notional 10% tax credit, but this was abolished in April 2016. If you receive dividends from UK companies via a broker, your end-of-year statement will show the total dividends received. Investment platforms typically provide a consolidated tax certificate each April showing dividends paid during the year — this is the figure to use. Enter the total UK dividend income and HMRC will calculate the tax using the allowance and applicable rate.",
+                ],
+            },
+            {
+                "heading": "Dividend Income from Foreign Companies",
+                "paragraphs": [
+                    "Foreign dividends are more complex. Most overseas companies are subject to withholding tax in their home country before the dividend reaches you. The withholding tax rate varies: 15% is common from the USA under the UK-US tax treaty, though the standard US rate is 30%. France typically withholds at 12.8% under the UK-France treaty.",
+                    "On your Self Assessment return, you declare the gross dividend (before withholding) and claim credit for the withholding tax already paid overseas. The credit is limited to the UK dividend tax that would otherwise be due — you cannot get a repayment if the withholding tax exceeds your UK liability. For many basic-rate taxpayers whose dividend tax rate is only 8.75%, a 15% US withholding tax already exceeds the UK tax due, meaning there is no additional UK dividend tax but also no repayment of the excess withholding. You should report foreign dividends in the 'Foreign income' section of the return (SA106 supplementary pages).",
+                ],
+            },
+            {
+                "heading": "Penalties for Not Filing",
+                "paragraphs": [
+                    "If you are required to file a Self Assessment return and fail to do so, HMRC charges a £100 fixed penalty immediately after the 31 January filing deadline (even if no tax is owed). Daily penalties of £10 per day accrue after 3 months, up to a maximum of £900. After 6 months, a further penalty of 5% of the tax due (or £300 if greater) is charged. After 12 months, another 5% penalty applies.",
+                    "For investors who are unaware of the filing requirement — perhaps because their dividends only recently crept above the £500 threshold — HMRC can impose all of these penalties retrospectively. If you have missed a filing deadline, the best approach is to register for Self Assessment and file as soon as possible. HMRC may waive penalties in cases of genuine ignorance, but this is not guaranteed. The interest charge on late payment is separate from the penalties and accrues from the 31 January payment deadline.",
+                ],
+            },
+        ],
+        "faqs": [
+            {"q": "Do I need to file Self Assessment if my dividends are exactly £500?", "a": "No. The requirement to file applies if dividends exceed £500. Exactly £500 or less does not trigger the obligation (unless you must file for another reason)."},
+            {"q": "My broker doesn't send me a dividend voucher — what do I use?", "a": "Your broker's annual tax certificate or consolidated dividend statement, usually sent in April, shows the total dividends paid during the tax year. This is the figure to enter on the Self Assessment return."},
+            {"q": "What is the penalty for missing the Self Assessment filing deadline?", "a": "A £100 fixed penalty immediately, then £10 per day after 3 months (up to £900), then 5% of tax due (or £300) at 6 months and again at 12 months."},
+        ],
+    },
+    {
+        "slug": "dividend-isa-vs-non-isa",
+        "title": "Dividend Tax on ISA vs Non-ISA Investments",
+        "description": "Dividends inside a Stocks and Shares ISA are completely free from UK income tax. Outside an ISA, dividend tax at 8.75%–39.35% applies above the £500 allowance. Here is the full comparison.",
+        "date_iso": "2026-05-26",
+        "date": "May 2026",
+        "reading_time": "6 min read",
+        "sections": [
+            {
+                "heading": "ISA Dividends",
+                "paragraphs": [
+                    "Dividends received from shares, funds or ETFs held inside a Stocks and Shares ISA are completely free from UK income tax and dividend tax. There is no limit on how much dividend income can accumulate inside an ISA — even if your ISA generates £50,000 of dividends in a year, none of it is taxable. No reporting is required; ISA income does not appear on a Self Assessment return. ISA dividends also do not count as income for any other purpose — they do not affect your personal allowance, your adjusted net income, the High Income Child Benefit Charge calculation or student loan repayments.",
+                    "The current annual ISA subscription limit is £20,000 per person for 2026/27. Once funds are inside the ISA wrapper, all future dividends and capital gains are permanently tax-free — there is no time limit on holding, no CGT on growth, and no exit charge. The ISA is arguably the most straightforward and powerful tax-efficient vehicle for ordinary investors.",
+                ],
+            },
+            {
+                "heading": "Non-ISA Dividends",
+                "paragraphs": [
+                    "Dividends from shares held in a general investment account (GIA) or directly held shares (not in an ISA or pension) are subject to dividend tax above the £500 annual allowance. The rates are 8.75% basic, 33.75% higher and 39.35% additional — applied after the dividend allowance and after your other income has been allocated to the relevant bands. Dividend income in a GIA counts as income for all purposes: it can affect your personal allowance taper (if total income exceeds £100,000), trigger the High Income Child Benefit Charge, and for plan 2 or plan 5 student loans, it counts towards the income used for repayment calculations.",
+                    "Non-ISA dividends must be reported through Self Assessment once total dividends exceed £500 in a tax year. The reporting obligation exists even if the resulting tax bill is small — HMRC cannot collect dividend tax through PAYE, so the onus is on the investor to declare.",
+                ],
+            },
+            {
+                "heading": "Moving Investments into an ISA",
+                "paragraphs": [
+                    "You cannot transfer shares directly from a GIA into an ISA. The only route is the bed and ISA strategy: sell the shares in the GIA, then use the cash proceeds to subscribe to the ISA and repurchase the shares (or an equivalent investment) inside the ISA wrapper. The sale in the GIA is a disposal for CGT purposes — any gain is subject to CGT in the normal way, reduced by the annual exempt amount (£3,000 for 2026/27).",
+                    "During the tax year in which the transfer occurs, dividends paid on the old GIA holding count as taxable dividends up to the sale date, and dividends paid inside the new ISA holding after that date are tax-free. If the sale and repurchase happen in the same tax year and the holding pays dividends quarterly, you will typically have some taxable and some tax-free dividends from the same underlying fund in the same tax year.",
+                ],
+            },
+            {
+                "heading": "The £20,000 ISA Allowance — Prioritisation Strategy",
+                "paragraphs": [
+                    "With a fixed annual subscription limit of £20,000, investors with both dividend-paying and growth-oriented holdings face a choice about which to prioritise for the ISA wrapper. The answer depends on tax rates and holding periods. For higher-rate taxpayers, the dividend tax saving from sheltering dividend-paying investments is 33.75% annually — which is likely to exceed the capital gains saving from sheltering growth assets, which is only realised on disposal. This suggests prioritising dividend-paying income investments inside the ISA first.",
+                    "However, the compounding effect of tax-free growth over decades is substantial. A growth investment that doubles over 10 years outside an ISA faces a 20% CGT charge on half the gain. Inside an ISA, there is no charge at all. For very long holding periods, the ISA shelter for high-growth assets can be more valuable. Most financial planners suggest holding the investment type with the highest annual tax drag inside the ISA first — which for most higher-rate taxpayers means high-dividend stocks and income funds.",
+                ],
+            },
+        ],
+        "faqs": [
+            {"q": "Do I pay any tax on dividends inside an ISA?", "a": "No. Dividends inside a Stocks and Shares ISA are completely exempt from UK income tax and do not need to be reported. There is no limit on how much ISA dividend income you can receive tax-free."},
+            {"q": "Do ISA dividends count towards the £500 dividend allowance?", "a": "No. ISA dividends are exempt and do not count towards the allowance or any filing threshold."},
+            {"q": "Can I move my shares directly into an ISA?", "a": "No. You must sell the shares outside the ISA (crystallising any CGT liability) and use the proceeds to subscribe to the ISA, then repurchase inside the ISA. This is the bed and ISA strategy."},
+        ],
+    },
     {
         "slug": "dividend-tax-in-scotland",
         "title": "Dividend Tax in Scotland 2026/27: How Scottish Income Tax Affects Your Bill",
