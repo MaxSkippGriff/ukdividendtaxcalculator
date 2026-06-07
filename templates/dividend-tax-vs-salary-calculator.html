@@ -1,0 +1,130 @@
+{% extends "article_layout.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a dividend or salary more tax-efficient in 2026/27?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For most director-shareholders, a combination of a low salary plus dividends is more tax-efficient than salary alone, because dividends avoid National Insurance. However, the advantage depends on income level and the company's corporation tax rate. Above £50,270 total income, the advantage narrows considerably."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference in tax between salary and dividends at basic rate?",
+      "acceptedAnswer": {"@type": "Answer", "text": "At the basic rate, salary income attracts 20% income tax and 8% employee NI (plus 15% employer NI). Dividend income attracts 8.75% dividend tax with no NI. The tax saving on dividends versus salary at basic rate can be over 15 percentage points when employer NI is included in the comparison."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose to take salary instead of dividends from my company?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. If you are a director-shareholder you have flexibility in how income is extracted from the company. The company can pay salary (with NI and income tax) or dividends (from post-corporation-tax profits, with dividend tax but no NI). Most directors use a combination."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block article_body %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide + comparison</div>
+  <h1>Dividend vs Salary: Tax Comparison for Directors 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Should you take income as salary or as dividends? This page compares the tax on each approach at multiple income levels, using 2026/27 rates, and explains why a combination of low salary plus dividends is usually optimal.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Last updated for the 2026/27 tax year.</p>
+
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Model your own salary vs dividends</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to see the full dividend tax breakdown for 2026/27.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Open dividend tax calculator</a>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Why the comparison matters</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Salary and dividends are taxed very differently. Salary attracts income tax (20%, 40%, 45%) and National Insurance — employee NI at 8% up to £50,270, 2% above that, plus employer NI at 15% on salary above £5,000. Add those up and the combined burden can exceed 60% at higher income levels.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Dividends carry no NI at all. Dividend tax rates apply instead: 8.75% basic, 33.75% higher, 39.35% additional. But the company has to pay corporation tax (19% or 25%) before any dividend can be paid out. So the comparison is never just dividend rate versus income tax rate — you need to look at both the company side and the personal side together.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Tax rates comparison table 2026/27</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem;margin-bottom:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Income band</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Salary: income tax</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Salary: employee NI</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Dividend tax</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">£12,571, £50,270</td><td style="padding:0.4rem 0.5rem;text-align:right;">20%</td><td style="padding:0.4rem 0.5rem;text-align:right;">8%</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">8.75%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">£50,271, £125,140</td><td style="padding:0.4rem 0.5rem;text-align:right;">40%</td><td style="padding:0.4rem 0.5rem;text-align:right;">2%</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">33.75%</td></tr>
+          <tr><td style="padding:0.4rem 0.5rem;">Above £125,140</td><td style="padding:0.4rem 0.5rem;text-align:right;">45%</td><td style="padding:0.4rem 0.5rem;text-align:right;">2%</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:var(--text-tertiary);margin:0;">Salary also attracts employer NI at 15% on amounts above ~£5,000. Dividends attract no NI of any kind. Corporation tax (19% or 25%) is paid on profits before dividends are declared.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: £40,000 of extraction</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        A director wants to take £40,000 of personal income from their company in 2026/27. Two ways to do it:
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;"><strong>Option A, All salary (£40,000):</strong></p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.75rem;">
+        <li>Income tax: 20% on (£40,000 − £12,570) = £5,486</li>
+        <li>Employee NI: 8% on (£40,000 − £12,570) = £2,194</li>
+        <li>Employer NI: 15% on (£40,000 − £5,000) = £5,250 (company cost)</li>
+        <li>Corporation tax saved (salary deductible): 19% × £40,000 = £7,600</li>
+        <li>Director's personal tax: £7,680</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;"><strong>Option B, £12,570 salary + £27,430 dividends:</strong></p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Income tax on salary: £0 (fully covered by Personal Allowance)</li>
+        <li>Employee NI: approximately £0 (salary at primary threshold)</li>
+        <li>Employer NI: approximately £1,136 (15% on £7,570)</li>
+        <li>Corporation tax on remaining profits: paid before dividends</li>
+        <li>Dividend tax: £500 allowance free. Remaining £26,930 × 8.75% = £2,356</li>
+        <li>Director's personal tax: <strong>£2,356</strong>, a saving of over £5,000 versus all-salary</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">The saving is largest while dividends stay within the basic-rate band. Once total income passes £50,270, the 33.75% higher-rate dividend tax starts to eat into that gap.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">When the advantage shrinks</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        In the higher-rate band, salary costs 40% income tax plus 2% NI — 42% in total. Dividends cost 33.75%. That is an 8.25 percentage point saving, still meaningful, and no NI on dividends remains a real benefit.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        In the additional-rate band, salary costs 45% plus 2% NI — 47%. Dividends cost 39.35%, a 7.65 percentage point saving. At every income level, dividends beat salary on personal tax. The caveat is always corporation tax on the profits before any dividend is paid.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Related resources</h2>
+      <div class="pill-grid">
+        <a href="/director-dividend-calculator" class="pill">Director dividend calculator</a>
+        <a href="/blog/salary-vs-dividends-director-2026" class="pill">Full salary vs dividends guide</a>
+        <a href="/blog/director-salary-dividend-mix-2026" class="pill">Optimal director salary mix</a>
+        <a href="/dividend-tax-calculator-director" class="pill">Director dividend tax calculator</a>
+        <a href="/calculators" class="pill">All calculators</a>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is dividend income always more tax-efficient than salary?</summary>
+          <div class="faq-answer">For director-shareholders, a salary-plus-dividends combination is almost always more efficient than salary alone at income levels up to around £125,140. The main advantage is that dividends carry no NI. The caveat is that the company pays corporation tax on profits before dividends can be paid.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What salary and dividend split is most common for directors?</summary>
+          <div class="faq-answer">Most directors take a salary of £9,100 (no NI for either party) or £12,570 (uses full Personal Allowance, some employer NI payable). The rest of the income need is met with dividends, keeping total income below £50,270 where possible to stay in the 8.75% basic-rate dividend band.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do employees (non-directors) benefit from taking dividends?</summary>
+          <div class="faq-answer">No. Employees who do not own shares cannot choose to take dividends in place of salary, dividends can only be paid to shareholders. The salary-vs-dividend comparison only applies to director-shareholders of limited companies.</div>
+        </details>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This page is for general information only. Consult a qualified accountant or tax adviser for advice on your specific circumstances.
+    </p>
+
+</section>
+{% endblock %}

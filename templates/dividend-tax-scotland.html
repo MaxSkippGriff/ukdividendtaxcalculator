@@ -1,0 +1,135 @@
+{% extends "article_layout.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do Scottish taxpayers pay higher dividend tax rates?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividend tax rates are set by the UK Parliament and are identical across all four UK nations. Scottish taxpayers pay 8.75% basic rate, 33.75% higher rate and 39.35% additional rate on dividends, the same as in England, Wales and Northern Ireland."}
+    },
+    {
+      "@type": "Question",
+      "name": "Which income threshold applies for dividend tax in Scotland?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For dividend tax purposes, the UK-wide basic-rate limit of £50,270 applies, not the Scottish higher-rate threshold. So a Scottish taxpayer whose salary puts them in the Scottish higher-rate band (above £43,662) may still pay basic-rate dividend tax (8.75%) on some dividends if their total income is below £50,270."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does the £500 dividend allowance apply in Scotland?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The £500 dividend allowance applies identically to Scottish taxpayers as to all UK taxpayers."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block article_body %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Dividend Tax in Scotland 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Scottish income tax bands differ from the rest of the UK, but dividend tax rates are identical across all four nations. This guide explains how the two systems interact for Scottish directors, investors and employees in 2026/27.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Last updated for the 2026/27 tax year.</p>
+
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The key rule: dividend tax is a UK-wide rate</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Scotland sets its own income tax rates on earned income. For 2026/27 there are five bands: starter (19%), basic (20%), intermediate (21%), higher (42%) and top (48%).
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        But dividend tax is a reserved UK-wide tax. The rates are 8.75% basic, 33.75% higher and 39.35% additional — the same in Scotland as in England, Wales and Northern Ireland. The £500 dividend allowance also applies identically across all four nations.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Which band threshold applies for dividend tax?</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        For dividend tax, HMRC uses the UK-wide basic-rate limit of £50,270 — not the Scottish higher-rate threshold. A Scottish taxpayer whose salary puts them in the Scottish higher-rate band (above £43,662) can still have dividends taxed at 8.75% if total income is below £50,270.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        This catches a lot of Scottish directors and investors off guard. Your salary is taxed under Scottish rates. Your dividends are taxed under UK rates with UK thresholds. Those are two separate systems running in parallel.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: Scottish director with salary above £43,662</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> A director based in Scotland has a salary of £45,000 and dividends of £8,000 in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £45,000 puts the director in the Scottish higher-rate band, income tax at 42% on salary above £43,662 applies under Scottish rates.</li>
+        <li>For dividend tax, the UK threshold of £50,270 applies. Salary of £45,000 leaves £5,270 of the UK basic-rate band for dividends.</li>
+        <li>First £500 of dividends: covered by dividend allowance, <strong>£0 tax</strong>.</li>
+        <li>Next £4,770 of dividends (up to £50,270 total income): taxed at UK basic rate of <strong>8.75% = £417</strong>.</li>
+        <li>Remaining £2,730 of dividends: total income is now above £50,270, so higher-rate dividend tax applies: <strong>33.75% = £921</strong>.</li>
+        <li><strong>Total dividend tax: £1,338.</strong></li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">Note: despite paying Scottish higher-rate income tax (42%) on salary above £43,662, the director pays basic-rate dividend tax (8.75%) on the portion of dividends below the UK £50,270 threshold.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Scottish income tax bands vs UK dividend tax bands 2026/27</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem;margin-bottom:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Band</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">Scottish income tax (salary)</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.04em;">UK dividend tax (all)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Starter: up to £15,397</td><td style="padding:0.4rem 0.5rem;text-align:right;">19%</td><td style="padding:0.4rem 0.5rem;text-align:right;">8.75%*</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Basic: £15,398, £27,491</td><td style="padding:0.4rem 0.5rem;text-align:right;">20%</td><td style="padding:0.4rem 0.5rem;text-align:right;">8.75%*</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Intermediate: £27,492, £43,662</td><td style="padding:0.4rem 0.5rem;text-align:right;">21%</td><td style="padding:0.4rem 0.5rem;text-align:right;">8.75%*</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Higher: £43,663, £50,270 (UK limit)</td><td style="padding:0.4rem 0.5rem;text-align:right;">42%</td><td style="padding:0.4rem 0.5rem;text-align:right;">8.75%*</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Higher: £50,271, £125,140</td><td style="padding:0.4rem 0.5rem;text-align:right;">42%</td><td style="padding:0.4rem 0.5rem;text-align:right;">33.75%</td></tr>
+          <tr><td style="padding:0.4rem 0.5rem;">Top: above £125,140</td><td style="padding:0.4rem 0.5rem;text-align:right;">48%</td><td style="padding:0.4rem 0.5rem;text-align:right;">39.35%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:var(--text-tertiary);margin:0;">*After the £500 dividend allowance and any unused Personal Allowance. Scottish band thresholds are approximate figures for 2026/27. The UK dividend basic-rate limit of £50,270 applies for dividend tax purposes regardless of Scottish income tax bands.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Planning implications for Scottish directors</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Scottish income tax rates on salary are higher than in the rest of the UK — 21% at intermediate rate, 42% at higher rate. A Scottish director paying those rates on salary has more to gain from keeping salary low and taking dividends instead.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Model the full position: Scottish income tax on salary, employer NI from low salary, then dividend tax at UK rates. The calculator on this site uses UK dividend tax rates, which is correct for Scottish taxpayers.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate your dividend tax (all UK nations)</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Our calculator uses UK dividend tax rates, which apply equally to Scottish taxpayers.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Open calculator</a>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Related pages</h2>
+      <div class="pill-grid">
+        <a href="/blog/dividend-tax-in-scotland" class="pill">Detailed Scotland dividend tax guide</a>
+        <a href="/dividend-tax-higher-rate-taxpayer" class="pill">Higher-rate dividend tax guide</a>
+        <a href="/director-dividend-calculator" class="pill">Director dividend calculator</a>
+        <a href="/blog/salary-vs-dividends-director-2026" class="pill">Salary vs dividends for directors</a>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do Scottish taxpayers pay different dividend tax rates?</summary>
+          <div class="faq-answer">No. Dividend tax rates are set by the UK Parliament and are 8.75% (basic), 33.75% (higher) and 39.35% (additional) across all four UK nations. Scottish income tax rates on salary are different, but dividend tax rates are identical.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Which tax band threshold applies for dividends in Scotland?</summary>
+          <div class="faq-answer">For dividend tax purposes, the UK-wide basic-rate limit of £50,270 applies, not the Scottish higher-rate threshold. A Scottish taxpayer with a salary above £43,662 may still pay basic-rate dividend tax (8.75%) on dividends if total income is below £50,270.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does the £500 dividend allowance apply in Scotland?</summary>
+          <div class="faq-answer">Yes. The £500 dividend allowance applies identically to Scottish taxpayers as to all other UK taxpayers.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can the dividend tax calculator on this site be used by Scottish taxpayers?</summary>
+          <div class="faq-answer">Yes. The calculator uses UK dividend tax rates and thresholds, which are the same for Scottish taxpayers. Enter your salary (using any figure) and dividend income, the dividend tax calculation is identical regardless of which nation you are in.</div>
+        </details>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only. Tax rules can change. Scottish income tax rates are subject to annual review by the Scottish Government. Consult a qualified accountant for personalised advice.
+    </p>
+
+</section>
+{% endblock %}

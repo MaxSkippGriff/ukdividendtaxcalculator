@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "article_layout.html" %}
+{% block article_body %}
 <section class="section">
   <div class="badge">Calculator</div>
   <h1>Dividend Allowance Calculator 2026/27</h1>
@@ -17,16 +17,12 @@
           <div class="currency-input">
             <span class="currency-symbol">£</span>
             <input type="number" id="salary" value="30000" min="0" oninput="calculate()">
-          </div>
         </div>
         <div class="field">
           <label>Total dividend income</label>
           <div class="currency-input">
             <span class="currency-symbol">£</span>
             <input type="number" id="dividends" value="5000" min="0" oninput="calculate()">
-          </div>
-        </div>
-      </div>
     </div>
     <div class="calc-widget-results">
       <div class="results-row"><span class="results-label">Personal allowance available for dividends</span><span class="results-value">£<span id="r_pa_remaining">0</span></span></div>
@@ -34,16 +30,11 @@
       <div class="results-row"><span class="results-label">Taxable dividends</span><span class="results-value">£<span id="r_taxable">0</span></span></div>
       <div class="results-row results-total"><span class="results-label">Estimated dividend tax</span><span class="results-value">£<span id="r_total">0</span></span></div>
       <p class="calc-disclaimer">Estimates only. Does not include income tax on salary or National Insurance.</p>
-    </div>
-  </div>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">How the dividend allowance works</h2>
-    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">The £500 dividend allowance is the amount of dividend income you can receive tax-free each year, on top of any remaining Personal Allowance. It was reduced from £1,000 to £500 from April 2024. The allowance applies to all taxpayers regardless of their tax band — but your tax band determines the rate on dividends above the allowance.</p>
-    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;margin-top:0.75rem;">Your salary or pension income uses the Personal Allowance first. Any unused Personal Allowance then shelters dividend income before the £500 dividend allowance is applied.</p>
-  </div>
+    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">The £500 dividend allowance is the amount of dividend income you can receive tax-free each year, on top of any remaining Personal Allowance. It was cut from £1,000 to £500 in April 2024. Every taxpayer gets it regardless of tax band — but your band determines the rate on dividends above it.</p>
+    <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;margin-top:0.75rem;">Salary or pension income uses the Personal Allowance first. Any unused Personal Allowance shelters dividend income before the £500 allowance is applied.</p>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Related calculators &amp; guides</h2>
     <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
       <li><a href="/dividend-personal-allowance" style="color:var(--accent);">How the personal allowance interacts with dividends</a></li>
@@ -51,9 +42,7 @@
       <li><a href="/investment-dividend-tax-calculator" style="color:var(--accent);">Investment Dividend Tax Calculator</a></li>
       <li><a href="/dividend-tax-basic-rate-taxpayer" style="color:var(--accent);">Dividend tax for basic-rate taxpayers</a></li>
     </ul>
-  </div>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
     <ul class="faq-list">
       <li class="faq-item">

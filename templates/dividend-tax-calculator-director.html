@@ -1,0 +1,147 @@
+{% extends "article_layout.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the most tax-efficient salary for a director in 2026/27?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Most directors take a salary of £9,100 (no NI for either party) or £12,570 (uses the full Personal Allowance, attracts some employer NI). The right level depends on whether the company pays corporation tax at 19% or 25%."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do directors pay NI on dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends paid to a director-shareholder are not subject to National Insurance. This is one of the main tax advantages of the salary-plus-dividend structure for limited company directors."}
+    },
+    {
+      "@type": "Question",
+      "name": "At what income does the 33.75% higher-rate dividend tax apply to a director?",
+      "acceptedAnswer": {"@type": "Answer", "text": "When total income (salary plus dividends) exceeds £50,270. For a director with a £9,100 salary, dividends above approximately £41,170 push total income above £50,270 and attract the 33.75% rate."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does a director need to file Self Assessment for dividend income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Directors who receive dividends must file a Self Assessment tax return. HMRC cannot collect dividend tax through PAYE. The filing deadline is 31 January following the end of the tax year."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block article_body %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Calculator guide</div>
+  <h1>Dividend Tax Calculator for Company Directors 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    Limited company directors typically extract income as a low salary plus dividends. This page explains how to calculate the personal dividend tax on that structure in 2026/27, with worked examples and the key thresholds you need to know.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Last updated for the 2026/27 tax year.</p>
+
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Use the dividend tax calculator</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your director salary and dividend amount to get a full breakdown by tax band, 8.75%, 33.75% and 39.35%.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Open calculator</a>
+      <a href="/director-dividend-calculator" style="display:inline-block;margin-left:0.75rem;font-size:0.85rem;font-weight:600;color:var(--accent);text-decoration:underline;">Director-specific calculator</a>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How the director salary-plus-dividend structure works</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Most sole directors take a low salary — typically £9,100 or £12,570 — and draw the rest as dividends from post-corporation-tax profits. The salary is deductible as a business expense, which reduces the company's corporation tax bill. Dividends come out of profits after corporation tax has already been paid.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Dividends attract no National Insurance. Not employer NI, not employee NI. That is the main advantage. But dividend tax rates of 8.75%, 33.75% and 39.35% still apply on the personal side, so these need to go into the calculation alongside corporation tax.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 rates and thresholds for directors</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:0.75rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Item</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">2026/27 figure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Personal Allowance</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">£12,570</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Dividend allowance</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">£500</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Basic-rate limit</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">£50,270</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Dividend tax, basic rate</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">8.75%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Dividend tax, higher rate</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">33.75%</td></tr>
+          <tr><td style="padding:0.4rem 0.5rem;">Dividend tax, additional rate</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">39.35%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">Employer NI secondary threshold (from April 2026): approximately £5,000. Employer NI rate: 15%.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: £9,100 salary + £40,000 dividends</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        A director takes a salary of £9,100 and dividends of £40,000 in 2026/27. Total income: £49,100.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Salary of £9,100 is within the Personal Allowance (£12,570), no income tax on salary.</li>
+        <li>Employee NI: nil (salary below primary threshold).</li>
+        <li>Employer NI: approximately £615 (15% on £9,100 − £5,000 = £4,100).</li>
+        <li>Remaining Personal Allowance for dividends: £12,570 − £9,100 = £3,470. First £3,470 of dividends: <strong>£0 tax</strong>.</li>
+        <li>Next £500: dividend allowance, <strong>£0 tax</strong>.</li>
+        <li>Taxable dividends: £40,000 − £3,470 − £500 = £36,030.</li>
+        <li>Basic-rate band available: £50,270 − £9,100 = £41,170. All £36,030 falls within basic rate.</li>
+        <li>Dividend tax: £36,030 × 8.75% = <strong>£3,153</strong>.</li>
+        <li><strong>Total personal tax: approximately £3,153</strong> (on £49,100 of income).</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">This is personal dividend tax only. Corporation tax on company profits is separate.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">When higher-rate dividend tax kicks in for directors</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        With a £9,100 salary, the 33.75% rate kicks in when dividends push total income above £50,270. Dividends above approximately £41,170 (£50,270 − £9,100) cross that line.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        With a £12,570 salary, dividends above approximately £37,700 hit the higher rate. Keep dividends below these levels and everything falls at 8.75%. That is the key number to plan around.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Optimal director salary: £9,100 vs £12,570</h2>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li><strong>£9,100:</strong> No employer NI, no employee NI, no income tax. Company saves corporation tax on the salary. Director accrues a qualifying State Pension year. A common choice for simplicity.</li>
+        <li><strong>£12,570:</strong> Uses the full Personal Allowance. No income tax on salary. Employer NI of approximately £1,136 (15% on £7,570) is payable. This NI is deductible for corporation tax, net cost at 25% rate is approximately £852. Generally worthwhile for companies paying corporation tax at the main rate.</li>
+        <li>Above £12,570: Employee NI at 8% becomes payable and the case for higher salary weakens rapidly. Most directors cap salary here.</li>
+      </ul>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Self Assessment for director dividend income</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Directors receiving dividends must file a Self Assessment return every year. HMRC has no way to collect dividend tax through PAYE. The deadline for 2026/27 is 31 January 2028 — both for filing and for payment. Interest runs on anything paid late.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Related resources</h2>
+      <div class="pill-grid">
+        <a href="/director-dividend-calculator" class="pill">Director dividend calculator</a>
+        <a href="/blog/director-salary-dividend-mix-2026" class="pill">Optimal salary mix guide</a>
+        <a href="/blog/salary-vs-dividends-director-2026" class="pill">Salary vs dividends worked example</a>
+        <a href="/dividend-tax-higher-rate-taxpayer" class="pill">Higher-rate dividend tax guide</a>
+        <a href="/calculators" class="pill">All calculators</a>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is the most tax-efficient director salary for 2026/27?</summary>
+          <div class="faq-answer">Most directors take a salary of £9,100 (no NI for either party, accrues State Pension credit) or £12,570 (uses full Personal Allowance, employer NI of ~£1,136 applies). The right choice depends on the company's corporation tax rate, at 25% the Personal Allowance route is usually worthwhile; at 19% it is closer.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do directors pay NI on dividends?</summary>
+          <div class="faq-answer">No. Dividends paid to a director-shareholder are not subject to National Insurance contributions, neither employee NI nor employer NI. This is a key reason why the salary-plus-dividend structure is more tax-efficient than salary alone.</div>
+        </details>
+        <details class="faq-item">
+          <summary>When does the 33.75% dividend tax rate apply to a director?</summary>
+          <div class="faq-answer">When total income (salary plus dividends) exceeds £50,270. For a director with a £9,100 salary, the higher rate applies once dividends exceed approximately £41,170. For a director with a £12,570 salary, dividends above approximately £37,700 attract 33.75%.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Does a director need to file Self Assessment?</summary>
+          <div class="faq-answer">Yes. Directors who receive dividends must file a Self Assessment tax return. HMRC cannot collect dividend tax through PAYE. The deadline for 2026/27 returns is 31 January 2028.</div>
+        </details>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This page is for general information only and does not constitute financial or tax advice. Tax rules can change. Consult a qualified accountant for advice on your specific circumstances.
+    </p>
+
+</section>
+{% endblock %}

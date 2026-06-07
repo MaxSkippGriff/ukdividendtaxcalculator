@@ -1,0 +1,143 @@
+{% extends "article_layout.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to file Self Assessment for dividend income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, if your dividend income exceeds £500 in a tax year. HMRC cannot collect dividend tax through PAYE. You must register for Self Assessment, file a return and pay any tax due by 31 January following the end of the tax year."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Self Assessment deadline for 2026/27 dividend income?",
+      "acceptedAnswer": {"@type": "Answer", "text": "The filing and payment deadline for 2026/27 dividend income (tax year ending 5 April 2027) is 31 January 2028."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the penalty for not filing Self Assessment?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A £100 fixed penalty applies immediately after the filing deadline. Daily penalties of £10 per day accrue after 3 months (up to £900). Further penalties of 5% of tax due (or £300, whichever is greater) apply at 6 and 12 months."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to declare dividends inside an ISA on Self Assessment?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Dividends inside a Stocks and Shares ISA are completely exempt and do not need to be reported on a Self Assessment return."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block article_body %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Self Assessment for Dividend Income 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    If your dividend income exceeds £500, you must report it through Self Assessment. HMRC cannot collect dividend tax through PAYE. This guide covers exactly when to register, what to include, deadlines, and penalties for missing them.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Last updated for the 2026/27 tax year.</p>
+
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Key dates for 2026/27</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Tax year end</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">5 April 2027</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Register for Self Assessment by</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">5 October 2027</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Paper return deadline</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;">31 October 2027</td></tr>
+          <tr><td style="padding:0.4rem 0.5rem;color:var(--text-secondary);">Online return and payment deadline</td><td style="padding:0.4rem 0.5rem;text-align:right;font-weight:600;color:var(--accent);">31 January 2028</td></tr>
+        </tbody>
+      </table>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">When you must file</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        You must register for Self Assessment if your dividend income exceeds £500 in a tax year. That threshold came in from 2024/25, reduced from £1,000. HMRC has no way to collect dividend tax automatically through PAYE. The responsibility to declare and pay sits entirely with you.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        If you already file Self Assessment for another reason — self-employment, rental income, salary above £100,000, being a company director — you just add dividend income to that return. No separate filing needed. If you don't currently file, you must register with HMRC by 5 October following the end of the tax year.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">What to include on the return</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        UK dividends go in the 'UK dividends' section of the SA100 (with SA101 supplementary pages if needed). UK dividends have no withholding tax, so the figure on your broker statement or dividend voucher is the gross amount.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Your investment platform usually provides a consolidated tax certificate in April covering all dividends paid during the year. Use that. Enter the total and HMRC's system applies the £500 allowance and calculates tax at the right rate.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Foreign dividends go on the SA106 Foreign income supplementary pages — not the UK dividends section. Enter the gross amount before any withholding tax, the withholding tax deducted, and claim any double taxation relief. Convert foreign currency to sterling at the exchange rate on the date you received it.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: calculating what you owe</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        <strong>Scenario:</strong> An investor has a salary of £35,000 and dividend income of £3,000 outside an ISA in 2026/27.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Total income: £38,000. Salary already uses the Personal Allowance (£12,570) and sits within the basic-rate band.</li>
+        <li>Dividends of £3,000 sit on top. Total income is £38,000, within the basic-rate band.</li>
+        <li>First £500 of dividends: dividend allowance, <strong>£0 tax</strong>.</li>
+        <li>Remaining taxable dividends: £2,500 at 8.75% = <strong>£218.75</strong>.</li>
+        <li>Total dividend tax due: £218.75.</li>
+        <li>Self Assessment required: Yes, dividends exceed £500.</li>
+        <li>Deadline to file and pay: 31 January 2028 (for 2026/27 income).</li>
+      </ul>
+      <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">Salary income tax is collected through PAYE and need not be re-reported unless the PAYE tax code was wrong.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Penalties for late filing or non-filing</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">If you miss the 31 January filing deadline:</p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>Immediately: <strong>£100 fixed penalty</strong> (even if no tax is owed).</li>
+        <li>3 months late: <strong>£10 per day</strong> for up to 90 days (maximum £900).</li>
+        <li>6 months late: <strong>5% of tax due or £300</strong>, whichever is greater.</li>
+        <li>12 months late: A further <strong>5% of tax due or £300</strong>.</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Interest also runs on late payment from 31 January. If you have missed a deadline, file as soon as you can and contact HMRC. They may reduce penalties for genuine error, but that is not guaranteed. Penalties apply even if no tax is owed.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">ISA and pension dividends, no filing needed</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Dividends inside a Stocks and Shares ISA or pension (SIPP) are completely exempt and don't need to be declared. They don't count toward the £500 threshold either. If all your dividends come from ISA holdings, you have no dividend tax reporting obligation regardless of the amount received.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax before filing</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Use the calculator to get an accurate estimate before completing your Self Assessment return.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Open calculator</a>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Related pages</h2>
+      <div class="pill-grid">
+        <a href="/dividends-and-self-assessment" class="pill">Dividends and Self Assessment guide</a>
+        <a href="/blog/self-assessment-dividends" class="pill">Full Self Assessment blog post</a>
+        <a href="/blog/foreign-dividend-tax-uk" class="pill">Foreign dividend tax guide</a>
+        <a href="/dividend-allowance-2026-27" class="pill">Dividend allowance explained</a>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do I need to file Self Assessment if my dividends are under £500?</summary>
+          <div class="faq-answer">No. The Self Assessment filing threshold for dividends is £500. If your total dividends are £500 or less, no filing is required on that basis. However, you may need to file for other reasons (self-employment, high salary, rental income etc).</div>
+        </details>
+        <details class="faq-item">
+          <summary>When is the Self Assessment deadline for 2026/27?</summary>
+          <div class="faq-answer">The online filing and payment deadline for 2026/27 (tax year ending 5 April 2027) is 31 January 2028. You must register for Self Assessment by 5 October 2027 if you have not filed before.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do ISA dividends need to be reported?</summary>
+          <div class="faq-answer">No. Dividends inside a Stocks and Shares ISA are completely exempt and do not need to be reported on a Self Assessment return. They do not count towards the £500 threshold.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if I miss the Self Assessment filing deadline?</summary>
+          <div class="faq-answer">A £100 fixed penalty applies immediately after 31 January, then £10 per day after 3 months (up to £900), then 5% of tax due (or £300) at 6 months and again at 12 months. Interest also accrues on late payments.</div>
+        </details>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only. HMRC rules can change. Always verify deadlines and thresholds on GOV.UK or consult a qualified accountant.
+    </p>
+
+</section>
+{% endblock %}

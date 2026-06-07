@@ -1,0 +1,130 @@
+{% extends "article_layout.html" %}
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are foreign dividends taxed the same as UK dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes, for UK residents. Foreign dividends are taxed at the same UK dividend tax rates: 8.75% basic, 33.75% higher, 39.35% additional. The £500 dividend allowance covers UK and foreign dividends combined."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I claim back withholding tax on foreign dividends?",
+      "acceptedAnswer": {"@type": "Answer", "text": "You can offset withholding tax against your UK dividend tax liability under Double Taxation Relief. The credit is capped at the UK tax due, excess withholding is not refunded. For basic-rate taxpayers with US dividends, the 15% US withholding often exceeds the 8.75% UK rate, meaning no additional UK tax is owed."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I report foreign dividends on my UK tax return?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Foreign dividends are reported on the SA106 Foreign income supplementary pages, not the UK dividends section. Enter the gross amount (before withholding), the withholding tax deducted, and claim the foreign tax credit. Convert to sterling at the exchange rate on the date of receipt."}
+    }
+  ]
+}
+</script>
+{% endblock %}
+{% block article_body %}
+<section class="section">
+  <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
+  <h1>Foreign Dividend Tax Calculator UK 2026/27</h1>
+  <p style="color:var(--text-secondary);max-width:660px;margin-bottom:0.4rem;">
+    UK residents pay UK dividend tax on foreign dividends at the same rates as UK dividends. But withholding tax adds complexity. This guide covers how foreign dividends are taxed, withholding tax credits, and how to declare them on Self Assessment.
+  </p>
+  <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Last updated for the 2026/27 tax year.</p>
+
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">UK tax on foreign dividends, same rates as domestic</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        UK residents pay UK dividend tax on foreign dividends at the same rates as on UK company dividends. It doesn't matter whether you hold the shares directly, through a platform, or via a fund.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        The 2026/27 rates are 8.75% basic, 33.75% higher and 39.35% additional. The £500 dividend allowance covers all your dividends — UK and foreign combined. HMRC does not distinguish between the two when applying rates.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Common withholding tax rates for UK investors</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:0.5rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border);">
+            <th style="text-align:left;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Country</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Withholding rate (treaty)</th>
+            <th style="text-align:right;padding:0.4rem 0.5rem;color:var(--text-tertiary);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.04em;">Without treaty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">USA</td><td style="padding:0.4rem 0.5rem;text-align:right;">15%</td><td style="padding:0.4rem 0.5rem;text-align:right;">30%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Germany</td><td style="padding:0.4rem 0.5rem;text-align:right;">15%</td><td style="padding:0.4rem 0.5rem;text-align:right;">25%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">France</td><td style="padding:0.4rem 0.5rem;text-align:right;">12.8%</td><td style="padding:0.4rem 0.5rem;text-align:right;">30%</td></tr>
+          <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.4rem 0.5rem;">Ireland</td><td style="padding:0.4rem 0.5rem;text-align:right;">0%</td><td style="padding:0.4rem 0.5rem;text-align:right;">25%</td></tr>
+          <tr><td style="padding:0.4rem 0.5rem;">Netherlands</td><td style="padding:0.4rem 0.5rem;text-align:right;">15%</td><td style="padding:0.4rem 0.5rem;text-align:right;">15%</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:var(--text-tertiary);margin:0;">Rates shown are treaty rates applicable to most individual UK investors. Actual rates depend on treaty provisions and broker documentation. File a W-8BEN form with your broker for US withholding reduction.</p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example: US dividend with withholding tax</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        A UK basic-rate taxpayer gets a US dividend with a gross amount of £1,000. The broker withholds 15% = £150 and pays £850 net. Assume total dividends for the year exceed £500.
+      </p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
+        <li>UK dividend tax at basic rate (8.75%) on £1,000 gross = £87.50.</li>
+        <li>Foreign tax credit for withholding: £150, but capped at UK tax due of £87.50.</li>
+        <li>Additional UK dividend tax owed: <strong>£0</strong> (withholding exceeds UK liability).</li>
+        <li>Excess withholding (£150 − £87.50 = £62.50): cannot be reclaimed.</li>
+      </ul>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;"><strong>For a higher-rate taxpayer on the same £1,000 dividend:</strong></p>
+      <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
+        <li>UK dividend tax at 33.75% = £337.50.</li>
+        <li>Foreign tax credit: £150.</li>
+        <li>Additional UK tax owed: £337.50 − £150 = <strong>£187.50</strong>.</li>
+      </ul>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How to declare on Self Assessment</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
+        Foreign dividends go on the SA106 Foreign income supplementary pages — not the UK dividends section. Enter the gross dividend before any withholding, the withholding tax deducted, and claim the foreign tax credit. Convert to sterling at the exchange rate on the date of receipt.
+      </p>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        Your broker or platform should provide an annual tax certificate listing dividends by country with withholding amounts. Use that. The deadline for 2026/27 income is 31 January 2028.
+      </p>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Foreign dividends inside an ISA</h2>
+      <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+        UK dividend tax doesn't apply to dividends inside a Stocks and Shares ISA, regardless of whether the holding is UK or foreign. But the foreign country's withholding tax still applies at source — even inside an ISA. US holdings in ISAs typically suffer 15% US withholding (after submitting a W-8BEN form) with no way to reclaim it, because there's no UK tax liability to offset against. That makes US dividend stocks marginally less efficient inside an ISA than UK dividend stocks.
+      </p>
+    </div>
+
+    <div style="background:var(--accent-light);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1.1rem 1.2rem;">
+      <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate your dividend tax</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Foreign dividends are taxed at the same UK rates, enter your total dividend income (UK + foreign) in the calculator.</p>
+      <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Open calculator</a>
+
+      <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Related pages</h2>
+      <div class="pill-grid">
+        <a href="/blog/foreign-dividend-tax-uk" class="pill">Full foreign dividend tax guide</a>
+        <a href="/blog/self-assessment-dividends" class="pill">Self Assessment for dividends</a>
+        <a href="/dividend-tax-self-assessment" class="pill">Self Assessment guide</a>
+        <a href="/dividends-inside-isa" class="pill">Dividends inside an ISA</a>
+    </div>
+
+    <div>
+      <h2 style="font-size:1.2rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Are foreign dividends taxed at the same rate as UK dividends?</summary>
+          <div class="faq-answer">Yes. UK residents pay dividend tax at the same rates on foreign dividends as on UK dividends: 8.75% basic, 33.75% higher, 39.35% additional. The £500 dividend allowance covers all dividends combined.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Can I reclaim US withholding tax on UK dividends?</summary>
+          <div class="faq-answer">You can offset (not reclaim) withholding tax against your UK dividend tax liability. The credit is capped at your UK tax due. For basic-rate taxpayers, the 15% US withholding (under treaty) often exceeds the 8.75% UK rate, so no additional UK tax is owed, but the excess withholding is not refunded.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I report foreign dividends on my tax return?</summary>
+          <div class="faq-answer">Use the SA106 Foreign income supplementary pages. Enter the gross dividend (before withholding), the withholding tax, and claim the foreign tax credit. Convert to sterling at the rate on the date of receipt.</div>
+        </details>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
+      <strong>Disclaimer:</strong> This guide is for general information only. Treaty withholding rates vary. Consult a qualified accountant for advice on your specific holdings.
+    </p>
+
+</section>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block head_extra %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": {{ title|tojson }},
+  "description": {{ meta_description|tojson }},
+  "url": {{ canonical_url|tojson }},
+  "inLanguage": "en-GB",
+  "isPartOf": {"@type": "WebSite", "url": {{ site_url|tojson }}}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="section" style="padding-bottom:0.5rem;">
+  <div class="badge">2026/27 estimate</div>
+  <h1>Dividend Tax on £{{ "{:,}".format(amount) }} 2026/27</h1>
+  <p style="font-size:1rem;color:var(--text-secondary);max-width:640px;line-height:1.65;">
+    After the £500 dividend allowance, a <strong>basic-rate taxpayer</strong> (£30,000 salary) pays
+    approximately <strong style="color:var(--accent);">£{{ "{:,.0f}".format(calc_basic.total_dividend_tax) }}</strong> in dividend tax on £{{ "{:,}".format(amount) }},
+    and a <strong>higher-rate taxpayer</strong> (£55,000 salary) pays approximately
+    <strong style="color:var(--accent);">£{{ "{:,.0f}".format(calc_higher.total_dividend_tax) }}</strong>.
+  </p>
+</div>
+
+<!-- Result cards -->
+<div class="section" style="padding-top:0.25rem;padding-bottom:0.5rem;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+
+    <!-- Basic-rate card -->
+    <div class="card" style="padding:1.25rem 1.4rem;border-top:3px solid var(--accent);">
+      <div style="font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Basic-rate taxpayer scenario</div>
+      <div style="font-size:0.82rem;color:var(--text-tertiary);margin-bottom:0.9rem;">£30,000 salary + £{{ "{:,}".format(amount) }} dividends</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1rem;">
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Dividend income</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_basic.total_dividend_income) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Allowance used</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_basic.dividend_allowance_used) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Taxable dividends</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_basic.taxable_dividends) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:var(--accent-light);border-radius:var(--radius-sm);border:1px solid rgba(27,107,74,0.15);">
+          <div style="font-size:0.7rem;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Dividend tax due</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--accent);">£{{ "{:,.0f}".format(calc_basic.total_dividend_tax) }}</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary);">
+        {% if calc_basic.dividends_at_basic > 0 %}
+        £{{ "{:,.0f}".format(calc_basic.dividends_at_basic) }} at 8.75% basic rate
+        {% if calc_basic.dividends_at_higher > 0 %} · £{{ "{:,.0f}".format(calc_basic.dividends_at_higher) }} at 33.75% higher rate{% endif %}
+        {% elif calc_basic.taxable_dividends == 0 %}
+        All dividends covered by Personal Allowance + dividend allowance, no dividend tax due.
+        {% endif %}
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.78rem;color:var(--text-tertiary);">
+        Effective dividend rate: <strong style="color:var(--text-secondary);">{{ "{:.1f}".format(calc_basic.effective_dividend_rate) }}%</strong>
+        · Net dividends: <strong style="color:var(--text-secondary);">£{{ "{:,.0f}".format(calc_basic.net_dividend_income) }}</strong>
+      </div>
+    </div>
+
+    <!-- Higher-rate card -->
+    <div class="card" style="padding:1.25rem 1.4rem;border-top:3px solid #5B8DB8;">
+      <div style="font-size:0.72rem;font-weight:700;color:#5B8DB8;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;">Higher-rate taxpayer scenario</div>
+      <div style="font-size:0.82rem;color:var(--text-tertiary);margin-bottom:0.9rem;">£55,000 salary + £{{ "{:,}".format(amount) }} dividends</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:1rem;">
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Dividend income</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_higher.total_dividend_income) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Allowance used</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_higher.dividend_allowance_used) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:var(--surface-alt);border-radius:var(--radius-sm);">
+          <div style="font-size:0.7rem;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Taxable dividends</div>
+          <div style="font-size:1.1rem;font-weight:700;color:var(--text-primary);">£{{ "{:,.0f}".format(calc_higher.taxable_dividends) }}</div>
+        </div>
+        <div style="padding:0.6rem 0.75rem;background:#EFF6FF;border-radius:var(--radius-sm);border:1px solid rgba(91,141,184,0.2);">
+          <div style="font-size:0.7rem;color:#5B8DB8;text-transform:uppercase;font-weight:700;margin-bottom:0.15rem;">Dividend tax due</div>
+          <div style="font-size:1.1rem;font-weight:700;color:#5B8DB8;">£{{ "{:,.0f}".format(calc_higher.total_dividend_tax) }}</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary);">
+        {% if calc_higher.dividends_at_higher > 0 %}
+        £{{ "{:,.0f}".format(calc_higher.dividends_at_higher) }} at 33.75% higher rate
+        {% if calc_higher.dividends_at_basic > 0 %} · £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 8.75% basic rate{% endif %}
+        {% if calc_higher.dividends_at_additional > 0 %} · £{{ "{:,.0f}".format(calc_higher.dividends_at_additional) }} at 39.35% additional rate{% endif %}
+        {% elif calc_higher.dividends_at_basic > 0 %}
+        £{{ "{:,.0f}".format(calc_higher.dividends_at_basic) }} at 8.75% basic rate
+        {% endif %}
+      </div>
+      <div style="margin-top:0.5rem;font-size:0.78rem;color:var(--text-tertiary);">
+        Effective dividend rate: <strong style="color:var(--text-secondary);">{{ "{:.1f}".format(calc_higher.effective_dividend_rate) }}%</strong>
+        · Net dividends: <strong style="color:var(--text-secondary);">£{{ "{:,.0f}".format(calc_higher.net_dividend_income) }}</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Explanation -->
+<div class="section" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+  <h2 style="font-size:1.3rem;margin-bottom:0.75rem;">How dividend tax on £{{ "{:,}".format(amount) }} is calculated (2026/27)</h2>
+  <div class="card" style="padding:1.1rem 1.2rem;">
+    <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
+      <strong>Step 1, Personal Allowance.</strong> Salary fills the Personal Allowance (£12,570) first. At £30,000 the full allowance is used, so dividends get no PA shelter. Same at £55,000.
+    </p>
+    <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
+      <strong>Step 2, Dividend allowance.</strong> The first £500 of dividends is free from dividend tax. After that, £{{ "{:,.0f}".format([amount - 500, 0]|max) }} is potentially taxable.
+    </p>
+    <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.6rem;">
+      <strong>Step 3, Bands.</strong> Salary fills the basic-rate band first. A £30,000 salary leaves £20,270 of the basic-rate band for dividends at 8.75%. A £55,000 salary already exceeds £50,270, so all dividends fall in the higher-rate band at 33.75%.
+    </p>
+    <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
+      <strong>Your actual position may differ.</strong> These are illustrative scenarios. Use the calculator with your real salary and pension contributions for a precise figure.
+    </p>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+  <div class="card" style="padding:1.25rem 1.4rem;border-top:3px solid var(--accent);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:1.05rem;font-weight:600;margin-bottom:0.2rem;">Enter your actual salary for a precise result</div>
+      <div style="font-size:0.85rem;color:var(--text-secondary);">The calculator handles all UK dividend tax bands, pension deductions and the Personal Allowance taper.</div>
+    </div>
+    <a href="/calculator" style="display:inline-flex;align-items:center;gap:0.45rem;background:var(--accent);color:white;font-weight:600;font-size:0.88rem;padding:0.6rem 1.25rem;border-radius:100px;text-decoration:none;white-space:nowrap;flex-shrink:0;">
+      Open calculator
+      <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="width:13px;height:13px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- Other amounts -->
+<div class="section" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+  <div style="font-size:0.8rem;font-weight:700;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;">Dividend tax for other amounts</div>
+  <div class="pill-grid">
+    {% for a in all_amounts %}
+    {% if a == amount %}
+    <span class="pill" style="border-color:var(--accent);color:var(--accent);background:var(--accent-light);font-weight:700;">£{{ "{:,}".format(a) }}</span>
+    {% else %}
+    <a href="/dividend-tax-on-{{ a }}" class="pill">£{{ "{:,}".format(a) }}</a>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-tertiary);">Also see: <a href="/dividend-tax/{{ amount }}" style="color:var(--accent);">detailed breakdown for £{{ "{:,}".format(amount) }}</a></div>
+</div>
+
+<!-- Disclaimer -->
+<div class="section" style="padding-top:0.25rem;padding-bottom:1.5rem;">
+  <div style="font-size:0.78rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:0.75rem;line-height:1.6;">
+    Estimates only, not financial or tax advice. 2026/27 figures: £500 dividend allowance, 8.75% basic, 33.75% higher, 39.35% additional rate, Personal Allowance £12,570. Scenarios use fixed salaries for illustration. Your actual tax depends on your full income and circumstances. Check <a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--text-tertiary);">GOV.UK: Tax on dividends</a>.
+  </div>
+</div>
+{% endblock %}

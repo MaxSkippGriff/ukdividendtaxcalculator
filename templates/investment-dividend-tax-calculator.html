@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "article_layout.html" %}
+{% block article_body %}
 <section class="section">
   <div class="badge">Calculator</div>
   <h1>Investment Dividend Tax Calculator 2026/27</h1>
@@ -17,16 +17,12 @@
           <div class="currency-input">
             <span class="currency-symbol">£</span>
             <input type="number" id="employment_income" value="40000" min="0" oninput="calculate()">
-          </div>
         </div>
         <div class="field">
           <label>Dividend income outside ISA / pension</label>
           <div class="currency-input">
             <span class="currency-symbol">£</span>
             <input type="number" id="dividend_income" value="8000" min="0" oninput="calculate()">
-          </div>
-        </div>
-      </div>
     </div>
     <div class="calc-widget-results">
       <div class="results-row"><span class="results-label">Personal allowance applied to dividends</span><span class="results-value">£<span id="r_pa_applied">0</span></span></div>
@@ -34,19 +30,14 @@
       <div class="results-row"><span class="results-label">Taxable dividends</span><span class="results-value">£<span id="r_taxable">0</span></span></div>
       <div class="results-row results-total"><span class="results-label">Dividend tax estimate</span><span class="results-value">£<span id="r_total">0</span></span></div>
       <p class="calc-disclaimer">Estimates only. Does not include income tax on employment income or capital gains tax.</p>
-    </div>
   </div>
 
   <div style="background:var(--surface-alt);border:1.5px solid var(--accent);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;">
     <p style="font-size:0.88rem;color:var(--text-primary);margin:0;line-height:1.6;"><strong>ISA tip:</strong> Dividends inside a Stocks &amp; Shares ISA are completely tax-free — no dividend tax regardless of amount. Consider sheltering high-yield investments in your ISA allowance first. The 2026/27 ISA allowance is £20,000.</p>
-  </div>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">About investment dividend tax</h2>
     <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">When you hold shares or funds outside an ISA or pension, any dividends received count towards your taxable income. Your employment or pension income fills the tax bands first; dividends then sit on top. The £500 dividend allowance and any remaining Personal Allowance reduce the taxable amount before the relevant dividend rate is applied.</p>
-  </div>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Related guides &amp; calculators</h2>
     <ul style="padding-left:1.25rem;line-height:1.9;font-size:0.9rem;">
       <li><a href="/dividend-tax-for-investors" style="color:var(--accent);">Dividend tax for investors</a></li>
@@ -54,9 +45,7 @@
       <li><a href="/dividend-tax-and-isa" style="color:var(--accent);">Dividend tax and ISA</a></li>
       <li><a href="/dividend-allowance-calculator" style="color:var(--accent);">Dividend Allowance Calculator</a></li>
     </ul>
-  </div>
 
-  <div class="card">
     <h2 style="font-size:1.05rem;margin-bottom:0.75rem;">Frequently asked questions</h2>
     <ul class="faq-list">
       <li class="faq-item">

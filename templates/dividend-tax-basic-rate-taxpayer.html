@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "article_layout.html" %}
 {% block jsonld %}
 <script type="application/ld+json">
 {
@@ -24,7 +24,7 @@
 }
 </script>
 {% endblock %}
-{% block content %}
+{% block article_body %}
 <section class="section">
   <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
   <h1>Dividend Tax for Basic-Rate Taxpayers 2026/27</h1>
@@ -33,54 +33,44 @@
   </p>
   <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
 
-  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The 8.75% basic-rate dividend tax</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        Basic-rate taxpayers pay 8.75% on dividend income above the £500 dividend allowance in 2026/27. You remain a basic-rate taxpayer as long as your total income — salary, pension, dividends and everything else — stays below the higher-rate threshold of £50,270.
+        Basic-rate taxpayers pay 8.75% on dividends above the £500 allowance in 2026/27. You stay a basic-rate taxpayer as long as total income — salary, pension, dividends, everything — stays below £50,270.
       </p>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-        The rate is lower than the equivalent income tax rate (20%) because dividends are paid from company profits that have already been subject to corporation tax.
+        The rate is lower than income tax (20%) because dividends come from company profits that have already been taxed.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">The £500 dividend allowance</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        Every UK taxpayer gets a £500 dividend allowance each tax year. This means the first £500 of dividend income is completely free from dividend tax — regardless of which rate band you sit in or how large your total dividend income is.
+        Every UK taxpayer gets a £500 dividend allowance. The first £500 of dividend income each year is free from dividend tax regardless of your rate band or how large your total dividends are.
       </p>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-        The allowance was reduced from £1,000 in April 2024 and from £2,000 in April 2023. Using the old figures will cause you to underestimate your dividend tax bill. For 2026/27 it remains at £500.
+        The allowance was £1,000 in 2023/24 and £2,000 before that. Using the old figures will understate your tax bill. For 2026/27 it is £500.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How dividends sit in the tax calculation</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        HMRC stacks income in a specific order when working out how much tax you owe:
+        HMRC stacks income in a fixed order:
       </p>
       <ol style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
-        <li><strong>Non-savings income</strong> — salary, pension, self-employment profits. This fills the Personal Allowance first.</li>
+        <li><strong>Non-savings income</strong> — salary, pension, self-employment. Fills the Personal Allowance first.</li>
         <li><strong>Savings income</strong> — bank interest and similar.</li>
-        <li><strong>Dividend income</strong> — sits on top of everything else.</li>
+        <li><strong>Dividend income</strong> — sits on top.</li>
       </ol>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-        Because dividends sit on top, your salary determines how much basic-rate band remains for dividends. A salary of £30,000 leaves £20,270 of basic-rate band available before dividends start being taxed at the higher rate (£50,270 − £30,000 = £20,270).
+        Dividends sit at the top, so your salary determines how much basic-rate band is left for them. A salary of £30,000 leaves £20,270 of basic-rate band before the higher rate kicks in (£50,270 − £30,000 = £20,270).
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Using the Personal Allowance against dividends</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        The Personal Allowance for 2026/27 is £12,570. It is applied to non-savings income first. If your salary is lower than £12,570, the unused portion of the Personal Allowance can shelter some dividend income from tax entirely.
+        The Personal Allowance is £12,570 and goes against non-savings income first. If your salary is below £12,570, the unused portion can shelter some dividend income entirely.
       </p>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-        For example, if your salary is £8,000, the remaining £4,570 of Personal Allowance (£12,570 − £8,000) can be used against the first £4,570 of dividend income, making it tax-free. The £500 dividend allowance then applies on top of that.
+        Say your salary is £8,000. The remaining £4,570 of Personal Allowance (£12,570 − £8,000) covers the first £4,570 of dividends tax-free. The £500 dividend allowance then applies on top of that.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example — £30,000 salary and £5,000 dividends</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
         <strong>Scenario:</strong> Salary £30,000, dividends £5,000 in 2026/27.
@@ -97,9 +87,7 @@
       <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
         This assumes no other income. If you also have savings interest or rental income, those would also count towards the rate bands.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates at a glance</h2>
       <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
         <thead>
@@ -136,9 +124,7 @@
       <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Calculate your dividend tax</p>
       <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to see exactly how much dividend tax you owe at 8.75%, 33.75% or 39.35%.</p>
       <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
       <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
         <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
@@ -162,13 +148,11 @@
           <summary>Where do dividends sit in the tax calculation?</summary>
           <div class="faq-answer">Dividends are treated as the top slice of income. Non-savings income (salary, pension) fills the Personal Allowance and rate bands first, then savings income, then dividends. This means your salary level directly affects how much basic-rate band is left for dividends before higher rates kick in.</div>
         </details>
-      </div>
     </div>
 
     <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
       <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
     </p>
 
-  </div>
 </section>
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "article_layout.html" %}
 {% block jsonld %}
 <script type="application/ld+json">
 {
@@ -29,7 +29,7 @@
 }
 </script>
 {% endblock %}
-{% block content %}
+{% block article_body %}
 <section class="section">
   <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Guide</div>
   <h1>Dividend Tax for Investors 2026/27</h1>
@@ -38,12 +38,10 @@
   </p>
   <p style="font-size:0.8rem;color:var(--text-tertiary);margin-bottom:1.5rem;">Published by the UK Money Calculators editorial team. Last updated for the 2026/27 tax year.</p>
 
-  <div style="max-width:700px;display:flex;flex-direction:column;gap:1.25rem;">
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Which dividends are taxable?</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        Dividends received from shares and funds held outside an ISA or pension are subject to UK income tax. This includes dividends from:
+        Dividends from shares and funds held outside an ISA or pension are subject to UK income tax. This includes dividends from:
       </p>
       <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin-bottom:0.5rem;">
         <li>Individual shares held in a general investment account or trading account</li>
@@ -54,19 +52,15 @@
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
         Dividends inside a Stocks and Shares ISA or pension are completely free from dividend tax. They also do not count towards the £500 dividend allowance.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">How income ordering affects your rate</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
-        Dividends are treated as the top slice of your total income. Your salary, pension, rental income and other non-dividend income fills the Personal Allowance (£12,570) and the rate bands first. Dividends then sit on top.
+        Dividends are treated as the top slice of income. Your salary, pension, rental income and other non-dividend income fills the Personal Allowance (£12,570) and the rate bands first. Dividends then sit on top.
       </p>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin:0;">
-        This means that even if your dividends are relatively small, a high salary can push those dividends into the higher-rate or additional-rate band. The rate you pay on dividends depends on where they land across the bands — not on the dividends in isolation.
+        So even small dividends can attract the higher or additional rate if your salary is already large. The rate you pay on dividends depends on where they land in the bands — not on the dividend amount alone.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">2026/27 dividend tax rates</h2>
       <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin-bottom:0.5rem;">
         <thead>
@@ -97,9 +91,7 @@
       <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
         The first £500 of dividend income each tax year is covered by the dividend allowance and is not taxed.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.5rem;">Worked example</h2>
       <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:0.5rem;">
         <strong>Scenario:</strong> An investor earns a salary of £30,000 and receives £3,000 in dividends from a share portfolio held outside an ISA in 2026/27.
@@ -114,9 +106,7 @@
       <p style="font-size:0.82rem;color:var(--text-tertiary);margin:0;">
         If those same dividends were inside a Stocks and Shares ISA, the tax would be £0.
       </p>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Common mistakes</h2>
       <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
         <li><strong>Assuming all dividends are tax-free below £500.</strong> The £500 is an annual allowance across all taxable dividend sources. If you hold shares in multiple companies or funds outside an ISA, the dividends from all of them count together.</li>
@@ -130,9 +120,7 @@
       <p style="font-size:0.9rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;">Estimate your dividend tax</p>
       <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:0.75rem;">Enter your salary and dividend income to get a full breakdown at 8.75%, 33.75% and 39.35%.</p>
       <a href="/calculator" style="display:inline-block;background:var(--accent);color:white;font-size:0.85rem;font-weight:700;padding:0.5rem 1.1rem;border-radius:999px;text-decoration:none;">Use the calculator</a>
-    </div>
 
-    <div class="card" style="padding:1.1rem 1.2rem;">
       <h2 style="font-size:1.05rem;margin-bottom:0.4rem;">Official sources</h2>
       <ul style="font-size:0.88rem;color:var(--text-secondary);line-height:1.9;padding-left:1.2rem;margin:0;">
         <li><a href="https://www.gov.uk/tax-on-dividends" target="_blank" rel="noopener" style="color:var(--accent);">GOV.UK — Tax on dividends</a></li>
@@ -160,13 +148,11 @@
           <summary>Do ISA dividends count towards the £500 allowance?</summary>
           <div class="faq-answer">No. Dividends received inside a Stocks and Shares ISA are completely tax-free and do not count towards the £500 dividend allowance. Only dividends outside an ISA count against the allowance and are potentially taxable.</div>
         </details>
-      </div>
     </div>
 
     <p style="font-size:0.8rem;color:var(--text-tertiary);border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem;">
       <strong>Disclaimer:</strong> This guide is for general information only and does not constitute financial or tax advice. Tax rules can change and individual circumstances vary. Consult a qualified accountant or tax adviser for advice specific to your situation.
     </p>
 
-  </div>
 </section>
 {% endblock %}
