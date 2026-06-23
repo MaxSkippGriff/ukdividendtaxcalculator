@@ -8,6 +8,7 @@ from flask import Flask, abort, make_response, redirect, render_template, reques
 from flask_limiter import Limiter
 from calculator import active_tax_year, TAX_YEAR, calculate_dividend_tax, PERSONAL_ALLOWANCE, BASIC_RATE_LIMIT, DIVIDEND_ALLOWANCE, DIVIDEND_BASIC_RATE, DIVIDEND_HIGHER_RATE, DIVIDEND_ADDITIONAL_RATE
 from scraper_guard import init_guard
+import firestore_client as _fs
 
 load_dotenv()
 
@@ -137,6 +138,7 @@ def sitemap():
         (f"{SITE_URL}/privacy","0.3","yearly"),
         (f"{SITE_URL}/contact","0.3","yearly"),
         (f"{SITE_URL}/disclaimer","0.3","yearly"),
+        (f"{SITE_URL}/editorial-standards","0.4","yearly"),
         (f"{SITE_URL}/dividend-tax-for-contractors","0.6","monthly"),
         (f"{SITE_URL}/dividend-tax-for-investors","0.6","monthly"),
         (f"{SITE_URL}/dividends-and-self-assessment","0.6","monthly"),
@@ -226,13 +228,42 @@ def privacy():
         breadcrumbs=[{"name":"Home","url":SITE_URL+"/"},{"name":"Privacy","url":SITE_URL+"/privacy"}],
     ))
 
-@app.route("/contact")
+@app.route("/editorial-standards")
+def editorial_standards():
+    return render_template("editorial_standards.html", **_ctx(
+        title="Editorial Standards, UKDividendTaxCalculator.co.uk",
+        meta_description="How UKDividendTaxCalculator.co.uk writes, reviews and maintains its calculator content and guides on UK dividend tax.",
+        canonical_url=SITE_URL+"/editorial-standards",
+        breadcrumbs=[{"name":"Home","url":SITE_URL+"/"},{"name":"Editorial Standards","url":SITE_URL+"/editorial-standards"}],
+    ))
+
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+        email = request.form.get("email", "").strip()
+        message = request.form.get("message", "").strip()
+        try:
+            db = _fs.get_db()
+            if db is not None:
+                db.collection("contact_messages").add({
+                    "name": name,
+                    "email": email,
+                    "message": message,
+                    "site": SITE_URL,
+                    "created_at": _fs.server_timestamp(),
+                    "read": False,
+                })
+        except Exception:
+            pass
+        return redirect("/contact?sent=1")
+    sent = request.args.get("sent") == "1"
     return render_template("contact.html", **_ctx(
         title="Contact, UKDividendTaxCalculator.co.uk",
         meta_description="Get in touch with UKDividendTaxCalculator.co.uk.",
         canonical_url=SITE_URL+"/contact",
         breadcrumbs=[{"name":"Home","url":SITE_URL+"/"},{"name":"Contact","url":SITE_URL+"/contact"}],
+        sent=sent,
     ))
 
 @app.route("/disclaimer")

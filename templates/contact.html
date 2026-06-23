@@ -3,10 +3,39 @@
 <section class="section">
   <div style="font-size:0.73rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem;">Contact</div>
   <h1>Contact</h1>
-  <div style="max-width:540px;margin-top:1rem;">
-    <p style="color:var(--text-secondary);">Questions, feedback, or corrections? We'd love to hear from you.</p>
-    <p style="color:var(--text-secondary);">Email: <a href="mailto:editorial@ukdividendtaxcalculator.co.uk" style="color:var(--accent);font-weight:600;">editorial@ukdividendtaxcalculator.co.uk</a></p>
-    <p style="color:var(--text-secondary);margin-top:0.5rem;">Please note we cannot provide personalised tax advice. For your specific tax situation, consult a qualified accountant or tax adviser.</p>
+
+  {% if sent %}
+  <div style="max-width:540px;margin-top:1rem;background:var(--surface);border:1px solid var(--border);border-top:2px solid var(--accent);border-radius:var(--radius);padding:1.25rem 1.4rem;">
+    <p style="font-weight:600;color:var(--accent);margin:0 0 0.5rem;">Message sent</p>
+    <p style="margin:0;color:var(--text-secondary);">Thanks for getting in touch. We'll aim to respond within 2–3 working days.</p>
   </div>
+  {% else %}
+  <div style="max-width:540px;margin-top:1rem;">
+    <p style="color:var(--text-secondary);">Questions, feedback, or corrections? Use the form below.</p>
+    <p style="color:var(--text-secondary);font-size:0.87rem;margin-bottom:1.25rem;">We can't provide personal tax or financial advice.</p>
+
+    <form method="post" action="/contact" style="display:flex;flex-direction:column;gap:1rem;">
+      <div>
+        <label for="contact-name" style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Name <span style="color:var(--text-secondary);font-weight:400;">(optional)</span></label>
+        <input type="text" id="contact-name" name="name" autocomplete="name"
+          style="width:100%;box-sizing:border-box;padding:0.55rem 0.75rem;border:1.5px solid var(--border-strong);border-radius:6px;font-size:0.95rem;background:var(--surface);">
+      </div>
+      <div>
+        <label for="contact-email" style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Email <span style="color:var(--accent);">*</span></label>
+        <input type="email" id="contact-email" name="email" required autocomplete="email"
+          style="width:100%;box-sizing:border-box;padding:0.55rem 0.75rem;border:1.5px solid var(--border-strong);border-radius:6px;font-size:0.95rem;background:var(--surface);">
+      </div>
+      <div>
+        <label for="contact-message" style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.3rem;">Message <span style="color:var(--accent);">*</span></label>
+        <textarea id="contact-message" name="message" required rows="5"
+          style="width:100%;box-sizing:border-box;padding:0.55rem 0.75rem;border:1.5px solid var(--border-strong);border-radius:6px;font-size:0.95rem;background:var(--surface);resize:vertical;font-family:inherit;"></textarea>
+      </div>
+      <button type="submit"
+        style="align-self:flex-start;padding:0.6rem 1.5rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:0.95rem;font-weight:600;cursor:pointer;">
+        Send message
+      </button>
+    </form>
+  </div>
+  {% endif %}
 </section>
 {% endblock %}
