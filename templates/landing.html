@@ -660,7 +660,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
 const PA=12570,BASIC_LIMIT=50270,HIGHER_LIMIT=125140;
 const BASIC_BAND=37700,HIGHER_BAND=74870;
 const DIV_ALLOWANCE=500;
-const DIV_BASIC=0.1075,DIV_HIGHER=0.3575,DIV_ADD=0.3935;
+const DIV_BASIC=0.0875,DIV_HIGHER=0.3375,DIV_ADD=0.3935;
 const CIRC=452.39;
 function parseCur(s){return Math.max(0,parseFloat(String(s).replace(/[£,\s]/g,''))||0);}
 function fmt(n){if(!isFinite(n)||isNaN(n))return '—';return '£'+Math.round(n).toLocaleString('en-GB');}
