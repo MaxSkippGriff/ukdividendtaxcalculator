@@ -403,6 +403,36 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--text-primary)
   </div>
 </section>
 
+<section class="section" id="headroom" style="padding-top:0.6rem;padding-bottom:0.4rem;">
+  <div class="calc-card" style="border-top-color:var(--accent);padding:1.25rem 1.35rem 1.4rem;">
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:500;letter-spacing:-0.02em;margin:0 0 0.3rem;">Your dividend headroom</h2>
+    <p style="font-size:0.86rem;color:var(--text-secondary);line-height:1.6;margin:0 0 1rem;max-width:62ch;">
+      Dividends stack on top of your salary, so the rate you pay depends on how much room is left in each tax band. Here's how much more you could take before crossing into the next rate — updates live with the figures above.
+    </p>
+    <div id="hdNarrative" style="font-size:0.92rem;line-height:1.6;background:var(--accent-light,rgba(0,0,0,0.03));border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.9rem;margin-bottom:1rem;"></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.7rem;">
+      <div class="hd-tier" style="border:1px solid var(--border-strong);border-radius:10px;padding:0.8rem 0.9rem;">
+        <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-tertiary);">Still at 8.75%</div>
+        <div id="hdBasic" style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--accent);margin:0.15rem 0;letter-spacing:-0.02em;">£0</div>
+        <div style="font-size:0.78rem;color:var(--text-secondary);line-height:1.45;">more in dividends before the <strong>higher rate (33.75%)</strong> starts — i.e. until total income hits £50,270.</div>
+      </div>
+      <div class="hd-tier" style="border:1px solid var(--border-strong);border-radius:10px;padding:0.8rem 0.9rem;">
+        <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-tertiary);">Still under 39.35%</div>
+        <div id="hdHigher" style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--accent);margin:0.15rem 0;letter-spacing:-0.02em;">£0</div>
+        <div style="font-size:0.78rem;color:var(--text-secondary);line-height:1.45;">more before the <strong>additional rate (39.35%)</strong> starts — i.e. until total income hits £125,140.</div>
+      </div>
+      <div class="hd-tier" style="border:1px solid var(--border-strong);border-radius:10px;padding:0.8rem 0.9rem;">
+        <div style="font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#b45309;">£100k allowance taper</div>
+        <div id="hdTaper" style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:#b45309;margin:0.15rem 0;letter-spacing:-0.02em;">£0</div>
+        <div style="font-size:0.78rem;color:var(--text-secondary);line-height:1.45;">more before total income passes <strong>£100,000</strong>, where your Personal Allowance starts to be withdrawn (£1 lost per £2 over).</div>
+      </div>
+    </div>
+    <p style="font-size:0.74rem;color:var(--text-tertiary);margin:0.85rem 0 0;line-height:1.5;">
+      Thresholds for {{ tax_year }}: basic-rate limit £50,270, additional-rate threshold £125,140, Personal Allowance taper from £100,000. Headroom assumes your salary fills the bands first and ignores other reliefs. Pension contributions extend your bands. Estimates only — not personal advice.
+    </p>
+  </div>
+</section>
+
 <section class="section" id="how-it-works" style="padding-top:0.9rem;padding-bottom:0.75rem;">
   <div class="section-label">How it works</div>
   <h2>Three steps to estimate your dividend tax</h2>
@@ -730,6 +760,34 @@ function calculate(){
   const a=document.getElementById('assumptionsBlock');
   if(a)a.textContent='Tax year {{ tax_year }} · Dividend allowance £500 · Basic rate 8.75% · Higher rate 33.75% · Additional rate 39.35% · Personal Allowance £12,570 · Salary £'+Math.round(salary).toLocaleString('en-GB')+' · Estimates only — not advice.';
   setText('srTax',fmt(totalTax));setText('srNet',fmt(netDiv));
+  updateHeadroom(salary,nonDiv,pa,paRemaining,basicRemaining,higherRemaining,divs);
+}
+function updateHeadroom(salary,nonDiv,pa,paRemaining,basicRemaining,higherRemaining,divs){
+  // Dividends fill PA leftover, then the rest of the basic band, then the higher band.
+  const basicHeadroom=Math.max(0,paRemaining+basicRemaining);          // divs stayable within 8.75%
+  const higherHeadroom=Math.max(0,basicHeadroom+higherRemaining);      // total div capacity before 39.35%
+  const taperHeadroom=Math.max(0,100000-salary);                       // divs before total income hits £100k
+  setText('hdBasic',fmt(basicHeadroom));
+  setText('hdHigher',fmt(higherHeadroom));
+  setText('hdTaper',fmt(taperHeadroom));
+  // Narrative reflects where the user's current dividend entry sits.
+  const n=document.getElementById('hdNarrative');if(!n)return;
+  let msg;
+  if(divs<=0){
+    msg='Enter a dividend figure above to see where you stand. On a £'+Math.round(salary).toLocaleString('en-GB')+' salary you could take up to <strong>'+fmt(basicHeadroom)+'</strong> in dividends while paying just 8.75% on the taxable part.';
+  }else if(divs<basicHeadroom){
+    msg='Your <strong>'+fmt(divs)+'</strong> in dividends is fully within the basic rate. You have <strong>'+fmt(basicHeadroom-divs)+'</strong> of headroom left before any of it would be taxed at the 33.75% higher rate.';
+  }else if(divs<higherHeadroom){
+    const over=divs-basicHeadroom;
+    msg='You’re into higher-rate territory: about <strong>'+fmt(over)+'</strong> of your dividends are taxed at 33.75%. You have <strong>'+fmt(higherHeadroom-divs)+'</strong> before the 39.35% additional rate would apply.';
+  }else{
+    const over=divs-higherHeadroom;
+    msg='About <strong>'+fmt(over)+'</strong> of your dividends fall in the 39.35% additional-rate band. Every extra £100 of dividends here keeps £60.65 after tax.';
+  }
+  if(salary+divs>100000){
+    msg+=' <span style="color:#b45309;">Total income is over £100,000, so your Personal Allowance is being tapered — the slice between £100,000 and £125,140 carries an effective dividend rate well above the headline figure.</span>';
+  }
+  n.innerHTML=msg;
 }
 ['salary','dividendIncome','pensionContribs'].forEach(id=>{
   const e=document.getElementById(id);if(e)e.addEventListener('input',calculate);
